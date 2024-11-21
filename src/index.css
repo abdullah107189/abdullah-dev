@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+  .black {
+    color: #191d0f;
+  }
+
+  .green {
+    color: #60f318;
+  }
+
+  .bgGreen {
+    background-color: rgb(96, 243, 24, 0.2);
+  }
+}
+
+body {
+  background-color: #f6fbec;
+}
