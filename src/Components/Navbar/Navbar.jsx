@@ -1,50 +1,83 @@
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import './Navbar.css'
+import { NavLink } from "react-router-dom";
+import Toggle from "../Toggle";
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    // const [theme, setTheme] = useState(true);
+    // const handleToggleBtn = () => {
+    //     setTheme(!theme);
+    // };
+    // useEffect(() => {
+    //     document.documentElement.setAttribute("data-theme", (theme === true ? 'light' : 'dark'));
+    // }, [theme]);
+
+
+
+
 
     return (
-        <div className={`${isOpen ? '' : 'overflow-hidden'} `}>
-            <nav className="bg-[#f6fbec] border-b border-gray-300 shadow-sm relative">
+        <div className={`${isOpen ? '' : 'overflow-hidden'} ${isScrolled ? 'border-b border-gray-300 shadow-sm' : 'border-none'} sticky z-50 top-0`}>
+            <nav className="bgWhite shadow-sm relative">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="flex items-center justify-between h-16 z-50">
+                    <div className="flex items-center justify-between h-16">
                         {/* Logo */}
                         <div className="flex items-center">
-                            <a href="/" className="text-2xl font-bold text-[#60f318]">
-                                Abdullah | Dev
+                            <a href="/" className="text-2xl font-bold">
+                                <span className="blue">Abdullah</span> | <span className="green">Dev</span>
                             </a>
                         </div>
 
                         {/* Desktop Menu */}
-                        <div className="hidden md:flex space-x-8">
-                            <a
+                        <div className="hidden md:flex space-x-8 navbarA items-center" >
+                            <NavLink
+                                to={'/'}
                                 href="#about"
-                                className="text-gray-800 hover:text-[#60f318] transition duration-200"
+                                className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                             >
                                 About
-                            </a>
-                            <a
+                            </NavLink>
+
+                            <NavLink
                                 href="#projects"
-                                className="text-gray-800 hover:text-[#60f318] transition duration-200"
+                                className="relative  px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                             >
                                 Projects
-                            </a>
+                            </NavLink>
                             <a
                                 href="#services"
-                                className="text-gray-800 hover:text-[#60f318] transition duration-200"
+                                className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                             >
                                 Services
                             </a>
                             <a
                                 href="#contact"
-                                className="text-gray-800 hover:text-[#60f318] transition duration-200"
+                                className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                             >
                                 Contact
                             </a>
+                            <button>
+                                {/* Toggle to {theme === "light" ? "Dark" : "Light"} Mode */}
+                                <Toggle></Toggle>
+                            </button>
                         </div>
 
                         {/* Mobile Menu Button */}
-                        <div className="flex md:hidden">
+                        <div className="flex md:hidden ">
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
                                 className="text-gray-800 hover:text-[#60f318] focus:outline-none"
@@ -79,28 +112,28 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
 
-                <div className={`${isOpen ? 'right-0 top-[65px]' : '-right-72 '} md:hidden absolute md:w-2/3 w-1/3 text-center transform duration-300 bg-[#f6fbec] shadow-md z-50`}>
+                <div className={`${isOpen ? 'right-2 top-[65px]' : '-right-72 '} shadow-lg md:hidden absolute md:w-2/3 w-1/3 text-center transform duration-300 bg-[#f6fbec] rounded-lg  z-50 navbarA p-3`}>
                     <a
                         href="#about"
-                        className="block px-4 py-2 text-gray-800 hover:text-[#60f318] transition duration-200"
+                        className="block relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                     >
                         About
                     </a>
                     <a
                         href="#projects"
-                        className="block px-4 py-2 text-gray-800 hover:text-[#60f318] transition duration-200"
+                        className="block relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                     >
                         Projects
                     </a>
                     <a
                         href="#services"
-                        className="block px-4 py-2 text-gray-800 hover:text-[#60f318] transition duration-200"
+                        className="block relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                     >
                         Services
                     </a>
                     <a
                         href="#contact"
-                        className="block px-4 py-2 text-gray-800 hover:text-[#60f318] transition duration-200"
+                        className="block relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                     >
                         Contact
                     </a>

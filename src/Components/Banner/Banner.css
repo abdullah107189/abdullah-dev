@@ -1,0 +1,31 @@
+.bgImage{
+    background-image: url('../../assets/me.jpg');
+    background-position: top;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.bgImage:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust color and opacity */
+    z-index: 1;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/me.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Adjust as needed */
+  }

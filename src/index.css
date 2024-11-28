@@ -1,23 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+:root {
+  --text-color: #191d0f;
+  --bg-color: #f7f9fc;
+  --accent-color: #4bb8f2;
+}
 
-@layer components {
-  .black {
-    color: #191d0f;
-  }
-
-  .green {
-    color: #60f318;
-  }
-
-  .bgGreen {
-    background-color: rgb(96, 243, 24, 0.2);
-  }
+[data-theme='dark'] {
+  --text-color: #f7f9fc;
+  --bg-color: #1d232a;
 }
 
 body {
-  background-color: #f6fbec;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
+
+* {
+  scroll-behavior: smooth;
+}
+
+
+
+@layer components {
+  .black {
+    color: var(--text-color);
+  }
+
+  .green {
+    color: var(--accent-color);
+  }
+
+  .bgGreen {
+    background-color: rgba(96, 243, 24, 0.1);
+  }
+
+  .white {
+    color: white;
+  }
+
+  .bgWhite {
+    background-color: var(--bg-color);
+  }
+
+  .blue {
+    color: var(--accent-color);
+  }
+
+  .bgBlue {
+    background-color: var(--accent-color);
+  }
+} 
