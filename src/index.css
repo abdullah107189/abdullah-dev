@@ -15,12 +15,13 @@
   --bg-color: #1d232a;
 }
 
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
 
-* {
+* { 
   scroll-behavior: smooth;
 }
 
@@ -40,7 +41,7 @@ body {
   }
 
   .white {
-    color: white;
+    color: var(--bg-color);
   }
 
   .bgWhite {
@@ -55,3 +56,32 @@ body {
     background-color: var(--accent-color);
   }
 } 
+
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Custom Tailwind animations */
+@layer utilities {
+  .animate-gradient {
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+  }
+  .animate-typing {
+    animation: typing 2s steps(20, end), blink 0.5s step-end infinite alternate;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  @keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #60f318; }
+  }
+}

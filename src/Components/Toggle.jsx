@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 
 const Toggle = () => {
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
     useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme)
+        const localTheme = localStorage.getItem('theme')
+        document.querySelector('html').setAttribute('data-theme', localTheme)
     }, [theme])
 
     const handleToggle = () => {
@@ -11,7 +13,6 @@ const Toggle = () => {
         localStorage.setItem('theme', newTheme)
         setTheme(newTheme)
     }
-
     return (
         <label className="swap swap-rotate">
             <input

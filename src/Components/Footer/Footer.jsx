@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="bg-[#f3f1e7] text-gray-800 py-12">
+        <footer className="bgWhite py-12">
             <div className="max-w-7xl mx-auto flex flex-wrap gap-10 justify-between px-4">
                 {/* About Section */}
                 <div className="flex-1 min-w-[200px]">
@@ -70,25 +70,25 @@ const Footer = () => {
                     <div className="flex space-x-4 text-xl">
                         <a
                             href="#"
-                            className="text-gray-800 hover:text-[#60f318] transition-colors duration-200"
+                            className="hover:text-[#60f318] transition-colors duration-200"
                         >
                             <i className="fab fa-facebook"></i> {/* Facebook Icon */}
                         </a>
                         <a
                             href="#"
-                            className="text-gray-800 hover:text-[#60f318] transition-colors duration-200"
+                            className="hover:text-[#60f318] transition-colors duration-200"
                         >
                             <i className="fab fa-twitter"></i> {/* Twitter Icon */}
                         </a>
                         <a
                             href="#"
-                            className="text-gray-800 hover:text-[#60f318] transition-colors duration-200"
+                            className="hover:text-[#60f318] transition-colors duration-200"
                         >
                             <i className="fab fa-linkedin"></i> {/* LinkedIn Icon */}
                         </a>
                         <a
                             href="#"
-                            className="text-gray-800 hover:text-[#60f318] transition-colors duration-200"
+                            className="hover:text-[#60f318] transition-colors duration-200"
                         >
                             <i className="fab fa-github"></i> {/* GitHub Icon */}
                         </a>
@@ -103,7 +103,7 @@ const Footer = () => {
                     background: "linear-gradient(60%, #f6fbec 60%, rgba(96, 243, 24, 0.2) 30%, #60f318 10%)",
                 }}
             >
-                <p className="text-sm text-gray-700">
+                <p className="text-sm">
                     &copy; 2024 Md. Abdullah All Shamem. All rights reserved.
                 </p>
             </div>

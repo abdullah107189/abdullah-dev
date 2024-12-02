@@ -1,23 +1,35 @@
 import SimpleTypeWriter from 'simple-typewriter-react'
 import DownloadButton from '../DownloadCV/DownloadButton';
 import me from '../../assets/me.jpg'
+import me2 from '../../assets/mess-me.jpg'
+import me3 from '../../assets/ruet-me.jpg'
+import { useEffect, useState } from 'react';
 const Banner = () => {
+    const images = [me, me2, me3];
+    const [currentIndex, setCurrentIndex] = useState(0)
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex(prev => (prev - 1 + images.length) % images.length)
+        }, 3000);
+        return () => clearInterval(interval)
+    }, [])
     return (
         <header style={{ minHeight: 'calc(100vh - 65px)' }} className="relative flex items-center px-4">
             {/* Decorative Shapes */}
             <div className="absolute top-0 left-0 w-72 h-72 bg-[#4bb8f2] rounded-full blur-3xl opacity-10"></div>
             <div className="absolute right-10 top-30 w-72 h-72 bg-[#60f318] rounded-full blur-2xl opacity-10"></div>
 
-            <div className='grid grid-cols-12 items-center z-10'>
+            <div data-aos="fade-up" className='grid grid-cols-12 items-center z-10 md:m-0 mt-10'>
                 {/* Social Media Links */}
-                <div className="hidden md:flex space-y-4 text-gray-800 flex-col items-start justify-center">
+                <div className="hidden md:flex space-y-4 flex-col items-start justify-center">
 
                     <a
+                        data-aos="fade-left" data-aos-delay="600"
                         href="https://github.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-[#60f318] transition duration-200"
+                        className="hover:text-[#60f318] transition duration-200 black"
                     >
                         <svg
                             className="w-8 h-8"
@@ -29,10 +41,11 @@ const Banner = () => {
                         </svg>
                     </a>
                     <a
+                        data-aos="fade-left" data-aos-delay="700"
                         href="https://linkedin.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-[#60f318] transition duration-200"
+                        className="hover:text-[#60f318] transition duration-200 black"
                     >
                         <svg
                             className="w-8 h-8"
@@ -48,13 +61,13 @@ const Banner = () => {
                 {/* center  */}
                 <div className="md:col-span-6 col-span-12 mx-auto flex flex-col space-y-6">
                     {/* Name and Tagline */}
-                    <h1 className="text-2xl md:text-2xl font-bold text-gray-800">
-                        Hi I am <br />
-                        <span className='text-3xl'>
+                    <div className="text-2xl md:text-2xl font-bold black">
+                        <p data-aos="fade-up" data-aos-delay="100">Hi I am</p>
+                        <p data-aos="fade-up" data-aos-delay="200" className='text-3xl'>
                             <span className='blue'>M</span>d. <span className='blue'>A</span>bdullah <span className='blue'>A</span>ll <span className='blue'>S</span>hamem
-                        </span>
-                    </h1>
-                    <div className="md:text-4xl black mt-4 text-2xl font-bold">
+                        </p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300" className="md:text-4xl black mt-4 text-2xl font-bold">
                         <SimpleTypeWriter
                             words={["Full Stack Developer", "MERN Enthusiast", "React Specialist"]}
                             loop={true}
@@ -66,23 +79,18 @@ const Banner = () => {
                             cursorColor='red'
                         />
                     </div>
-                    <p className="text-lg text-gray-600 mt-2 mx-auto">
+                    <p data-aos="fade-up" data-aos-delay="400" className="text-lg black mt-2 mx-auto">
                         Crafting scalable and visually appealing web applications with a focus
                         on performance, usability, and responsive design.
                     </p>
 
                     {/* Call-to-Action Buttons */}
                     <div className="mt-6 flex items-center flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
-                        {/* <a
-                            href="/resume.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-[#60f318] text-white px-5 rounded-full py-2 hover:shadow-[#60f318] hover:shadow-custom font-semibold hover:bg-[#60f318]/10 hover:black transition duration-200"
-                        >
-                            Download Resume
-                        </a> */}
-                        <DownloadButton></DownloadButton>
+                        <div data-aos="fade-left" data-aos-delay="500">
+                            <DownloadButton></DownloadButton>
+                        </div>
                         <a
+                            data-aos="fade-right" data-aos-delay="500"
                             href="#projects"
                             className="black px-5 rounded-full py-2 border border-[#60f318] hover:shadow-[#60f318] hover:shadow-custom font-semibold hover:bg-[#60f318]/10 hover:black transition duration-200"
                         >
@@ -91,11 +99,28 @@ const Banner = () => {
                     </div>
                 </div>
 
-                <div className='md:mt-0 mt-10 md:col-span-5 col-span-12'>
-                    <img className='w-full lg:h-[500px] object-contain ' src={me} alt="" />
+                <div className='md:mt-0 mt-10 md:col-span-5 col-span-12 relative xl:h-[600px] lg:h-[500px] md:h-[450px] h-[600px] w-full '>
+
+                    <img
+                        data-aos="fade-right" data-aos-delay="100"
+                        className='absolute w-[250px] h-[450px] md:w-[200px] md:h-[400px] lg:w-[250px] xl:w-[300px] xl:h-[500px]   left-0 object-cover rounded-2xl p-1 transition-all duration-1000 ease-in-out'
+                        src={images[currentIndex]}
+                        alt="" />
+
+                    <img
+                        data-aos="fade-left" data-aos-delay="200"
+                        className='absolute w-[200px] h-[200px] md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[200px] xl:w-[250px] xl:h-[250px] object-top lg:top-44 md:top-44 z-10 top-48 right-0 object-cover rounded-2xl p-1 ease-in-out transition-all duration-1000'
+                        src={images[(currentIndex + 1) % images.length]}
+                        alt="" />
+                    <img
+
+                        className='absolute w-[200px] h-[200px] md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[200px]  object-top bottom-0 md:right-[25%] right-[20%]  z-20 object-cover rounded-2xl p-1 ease-in-out transition-all duration-1000'
+                        src={images[(currentIndex + 2) % images.length]}
+                        alt="" />
+
                 </div>
             </div>
-        </header>
+        </header >
     );
 };
 

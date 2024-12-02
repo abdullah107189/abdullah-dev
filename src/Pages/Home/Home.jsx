@@ -4,9 +4,8 @@ const Home = () => {
     return (
         <div className=" text-gray-800">
             <Banner></Banner>
-
             {/* About Me Section */}
-            <section id="about" className="py-16 bg-[#f7f9fc]">
+            <section id="about" className="py-16 bgWhite black">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center">
                         <h2 className="text-3xl font-bold text-[#60f318]">About Me</h2>
@@ -24,7 +23,7 @@ const Home = () => {
             </section>
 
             {/* Projects Section */}
-            <section id="projects" className="py-16 bg-[#f7f9fc]">
+            <section id="projects" className="py-16 bgWhite black">
                 <div className="max-w-7xl mx-auto px-6">
                     <h2 className="text-3xl font-bold text-center text-[#60f318]">
                         My Projects
@@ -79,7 +78,7 @@ const Home = () => {
             </section>
 
             {/* Services Section */}
-            <section id="services" className="py-16 bg-[#f7f9fc]">
+            <section id="services" className="py-16 bgWhite black">
                 <div className="max-w-7xl mx-auto px-6">
                     <h2 className="text-3xl font-bold text-center text-[#60f318]">
                         My Services
@@ -141,7 +140,7 @@ const Home = () => {
 
 
             {/* Contact Section */}
-            <section id="contact" className="py-16 bg-[#f7f9fc]">
+            <section id="contact" className="py-16 bgWhite black">
                 <div className="max-w-7xl mx-auto px-6">
                     <h2 className="text-3xl font-bold text-center text-[#60f318]">
                         Contact Me

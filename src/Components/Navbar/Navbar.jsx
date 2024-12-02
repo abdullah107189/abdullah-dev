@@ -18,18 +18,6 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // const [theme, setTheme] = useState(true);
-    // const handleToggleBtn = () => {
-    //     setTheme(!theme);
-    // };
-    // useEffect(() => {
-    //     document.documentElement.setAttribute("data-theme", (theme === true ? 'light' : 'dark'));
-    // }, [theme]);
-
-
-
-
-
     return (
         <div className={`${isOpen ? '' : 'overflow-hidden'} ${isScrolled ? 'border-b border-gray-300 shadow-sm' : 'border-none'} sticky z-50 top-0`}>
             <nav className="bgWhite shadow-sm relative">
@@ -45,15 +33,14 @@ const Navbar = () => {
                         {/* Desktop Menu */}
                         <div className="hidden md:flex space-x-8 navbarA items-center" >
                             <NavLink
-                                to={'/'}
-                                href="#about"
+                                to="/#about"
                                 className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                             >
                                 About
                             </NavLink>
 
                             <NavLink
-                                href="#projects"
+                                to={"/#projects"}
                                 className="relative  px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                             >
                                 Projects
@@ -70,17 +57,15 @@ const Navbar = () => {
                             >
                                 Contact
                             </a>
-                            <button>
-                                {/* Toggle to {theme === "light" ? "Dark" : "Light"} Mode */}
-                                <Toggle></Toggle>
-                            </button>
+                            <Toggle></Toggle>
                         </div>
 
                         {/* Mobile Menu Button */}
-                        <div className="flex md:hidden ">
+                        <div className="flex md:hidden">
+                            <Toggle></Toggle>
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
-                                className="text-gray-800 hover:text-[#60f318] focus:outline-none"
+                                className="ml-3 hover:text-[#60f318] focus:outline-none"
                             >
                                 <svg
                                     className="w-6 h-6"
@@ -112,7 +97,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
 
-                <div className={`${isOpen ? 'right-2 top-[65px]' : '-right-72 '} shadow-lg md:hidden absolute md:w-2/3 w-1/3 text-center transform duration-300 bg-[#f6fbec] rounded-lg  z-50 navbarA p-3`}>
+                <div className={`${isOpen ? 'right-2 top-[65px]' : '-right-72 '} shadow-lg md:hidden absolute md:w-2/3 w-1/3 text-center transform duration-300 bgWhite rounded-lg  z-50 navbarA p-3 space-y-3`}>
                     <a
                         href="#about"
                         className="block relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
