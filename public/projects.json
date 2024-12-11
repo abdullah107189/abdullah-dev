@@ -1,0 +1,323 @@
+[
+    {
+        "name": "Developer portfolio",
+        "description": "The field of web development is very popular today, and there are many job opportunities here. By creating websites, it is possible to contribute to the improvement of people's daily lives. A brief description of HTML, CSS, and JavaScript is provided.",
+        "image": "https://i.ibb.co.com/qxRB7zV/assignment-1.jpg",
+        "technologies": [
+            "Html",
+            "Css"
+        ],
+        "liveLink": "https://abdullah107189.github.io/assignment_1_developer_portfolio/",
+        "githubLink": "https://github.com/abdullah107189",
+        "duration": "3 days",
+        "role": "Solo Developer",
+        "challenges": "It was challenging for me to display the background image correctly.",
+        "features": [
+            "Importance of Web Development",
+            "Source of Inspiration",
+            "My Next Target"
+        ],
+        "tools": [
+            "Figma",
+            "Github"
+        ],
+        "creationDate": "10-06-2024"
+    },
+    {
+        "name": "G3 Architect",
+        "description": "The website aims to help people stay fit and healthy. Their core belief is that fitness should be accessible to everyone, regardless of income or access to a gym. ",
+        "image": "https: //i.ibb.co.com/M5WBgTn/Screenshot-2024-12-10-120616.jpg",
+        "technologies": [
+            "Html",
+            "Css"
+        ],
+        "liveLink": "https://abdullah107189.github.io/Assignment-2/assignment.html",
+        "githubLink": "https://github.com/abdullah107189/Assignment-2",
+        "duration": "1 day",
+        "role": "Solo Developer",
+        "challenges": "Transition, transform, hover, Grid layout and Responsive these were the challenges for me.",
+        "features": [
+            "Responsive design for all devices",
+            "Interactive UI with animations"
+        ],
+        "tools": [
+            "Figma",
+            "Github"
+        ],
+        "creationDate": "16-06-2024"
+    },
+    {
+        "name": "Fitness",
+        "description": " The website has introduced itself as a new brand and team of architects. The website is designed to be suitable for both desktop and mobile devices. The website is built using a remarkable modern design ",
+        "image": "https://i.ibb.co.com/RzQf65L/Screenshot-2024-12-10-124203.jpg",
+        "technologies": [
+            "Html",
+            "Css"
+        ],
+        "liveLink": "https://abdullah107189.github.io/assignment-2-batch-10/",
+        "githubLink": "https://github.com/abdullah107189/assignment-2-batch-10",
+        "duration": "3 days",
+        "role": "Solo Developer",
+        "challenges": "Position, Grid, Input form and table were the most challenging parts for me.",
+        "features": [
+            "Responsive design for all devices",
+            "Interactive UI with animations",
+            "Modern design",
+            "Free Workout Videos",
+            "Video Tutorials",
+            "Habit Change",
+            "BMI Calculator",
+            "Weight Loss",
+            "Running Information",
+            "Trainer Profiles"
+        ],
+        "tools": [
+            "Figma",
+            "Github"
+        ],
+        "creationDate": "26-07-2024"
+    },
+    {
+        "name": "Rinterio",
+        "description": "Rinterio is a design company focused on designing thoughtful, livable spaces. At the core of their design philosophy is to create spaces that are not only beautiful but also enhance the quality of life for those who live in them. Rinterio emphasizes a blend of rustic charm and modern sophistication in their designs, achieved through the use of weathered wood, sleek metal accents, and large windows.",
+        "image": "https://i.ibb.co.com/zxYXLmq/Screenshot-2024-12-10-125607.jpg",
+        "technologies": [
+            "Html",
+            "Css",
+            "Tailwind Css"
+        ],
+        "liveLink": "https://abdullah107189.github.io/assignment-3-with-tailwind/",
+        "githubLink": "https://github.com/abdullah107189/assignment-3-with-tailwind",
+        "duration": "2 days",
+        "role": "Solo Developer",
+        "challenges": "Grid ,input form and Responsive were the most challenging parts for me.",
+        "features": [
+            "Responsive design for all devices",
+            "Modern design",
+            "Client Testimonials",
+            "Budget planning"
+        ],
+        "tools": [
+            "DaisyUI",
+            "Github",
+            "Figma"
+        ],
+        "creationDate": "23-08-2024"
+    },
+    {
+        "name": "Donate Bangladesh",
+        "description": "Every person can help people in need and disaster through donations through this website.",
+        "image": "https://i.ibb.co.com/zxYXLmq/Screenshot-2024-12-10-125607.jpg",
+        "technologies": [
+            "Html",
+            "Css",
+            "Tailwind Css",
+            "JavaScript"
+        ],
+        "liveLink": "https://abdullah107189.github.io/assignment-5-b10/",
+        "githubLink": "https://github.com/abdullah107189/assignment-5-b10",
+        "duration": "2 days",
+        "role": "Solo Developer",
+        "challenges": "Grid ,input form and Responsive were the most challenging parts for me.",
+        "features": [
+            "Responsive design for all devices",
+            "Simple design",
+            "People Donation",
+            "Check Donation History"
+        ],
+        "tools": [
+            "DaisyUI",
+            "Github"
+        ],
+        "creationDate": "25-09-2024"
+    },
+    {
+        "name": "Geometry Genius",
+        "description": "The website aims to help users learn and practice calculating the area of different geometric shapes. The website is designed to help users learn about the area of different geometric shapes through interactive and educational means and interesting topic is the color will change each time you hover over the card.",
+        "image": "https://i.ibb.co.com/DY5yB10/Screenshot-2024-12-10-143531.jpg",
+        "technologies": [
+            "Html",
+            "Css",
+            "Tailwind Css",
+            "JavaScript"
+        ],
+        "liveLink": "https://abdullah107189.github.io/Geometry-Genius-project-using-ts/",
+        "githubLink": "https://github.com/abdullah107189/Geometry-Genius-project-using-ts",
+        "duration": "3 days",
+        "role": "Solo Developer",
+        "challenges": "Mouse hover and change color randomly and also Responsive were the most challenging parts for me.",
+        "features": [
+            "Responsive design for all devices",
+            "Modern design",
+            "Solve Math problems easily"
+        ],
+        "tools": [
+            "Github",
+            "Figma"
+        ],
+        "creationDate": "03-08-2024"
+    },
+    {
+        "name": "Peddy - Pet Adoption Platform",
+        "description": "A pet adoption platform where users can browse, review, and adopt pets. The website includes filtering options, detailed pet profiles, and a responsive design for an engaging user experience.",
+        "image": "https://i.ibb.co.com/pQ5ZLg8/Screenshot-2024-12-10-151218.jpg",
+        "technologies": [
+            "Html",
+            "Css",
+            "Tailwind Css",
+            "JavaScript"
+        ],
+        "liveLink": "https://abdullah-pets-shop.netlify.app/",
+        "githubLink": "https://github.com/abdullah107189/a6b10-with-js-using-api",
+        "duration": "3 days",
+        "role": "Solo Developer",
+        "challenges": "Implementing price sorting, creating a detailed pet profile page, adding an adopt button feature, and designing a category filter with responsive UI",
+        "features": [
+            "ES6",
+            "Filter pets by category and price",
+            "Detailed pet profiles with adoption status",
+            "Responsive design for all devices",
+            "Modern, user-friendly interface"
+        ],
+        "tools": [
+            "DaisyUI",
+            "Github",
+            "Figma"
+        ],
+        "creationDate": "06-10-2024"
+    },
+    {
+        "name": "Select Cricketer",
+        "description": "An interactive platform to select and manage cricket teams dynamically with React.",
+        "image": "https://i.ibb.co.com/nbt1HHD/Screenshot-2024-12-10-161516.jpg",
+        "technologies": [
+            "Html",
+            "Css",
+            "Tailwind Css",
+            "JavaScript",
+            "React"
+        ],
+        "liveDemo": "https://b10a7-select-cricketer-project-with-react.surge.sh/",
+        "github": "https://github.com/abdullah107189/Select-Cricketers",
+        "duration": "4 days",
+        "role": "Solo Developer",
+        "challenges": "Implementing real-time state management and smooth transitions for UI interactions.",
+        "features": [
+            "Dynamic player selection",
+            "Real-time updates on team composition",
+            "Responsive design for all devices",
+            "Intuitive and modern UI"
+        ],
+        "tools": [
+            "Vite",
+            "DaisyUI",
+            "SweetAlert2"
+        ],
+        "creationDate": "12-10-2024"
+    },
+    {
+        "name": "Gadget Shop",
+        "description": "An e-commerce platform for gadgets built with modern web technologies.",
+        "image": "https://i.ibb.co.com/MVgYnP7/Screenshot-2024-12-10-163114.jpg",
+        "technologies": [
+            "Html",
+            "Css",
+            "Tailwind Css",
+            "JavaScript",
+            "React",
+            "React Router"
+        ],
+        "liveDemo": "https://gadget-shop-abdullah-107189.netlify.app/",
+        "github": "https://github.com/abdullah107189/gadget-shop-with-react",
+        "duration": "3 days",
+        "role": "Lead Developer",
+        "challenges": "Managing user authentication with Firebase, implementing chart visualizations, and creating a seamless responsive experience.",
+        "features": [
+            "User Authentication using Firebase",
+            "Dynamic cart functionality with LocalForage",
+            "Interactive charts using Recharts",
+            "Mobile-first responsive design",
+            "Toast notifications for user interactions"
+        ],
+        "tools": [
+            "DaisyUI",
+            "React Helmet Async",
+            "SweetAlert2",
+            "React Hot Toast",
+            "Vite",
+            "Recharts"
+        ],
+        "creationDate": "06-11-2024"
+    },
+    {
+        "name": "Career Counseling Platform",
+        "description": "A platform designed to provide career guidance, counseling, and resources for students and professionals.",
+        "image": "https://i.ibb.co.com/bstsqz7/Screenshot-2024-12-10-163920.jpg",
+        "technologies": [
+            "Html",
+            "Css",
+            "Tailwind Css",
+            "JavaScript",
+            "React",
+            "React Router",
+            "Firebase"
+        ],
+        "liveDemo": "https://career-counseling-abdullah107189.netlify.app/",
+        "github": "https://github.com/abdullah107189/Career-Counseling",
+        "duration": "3 days",
+        "role": "Full-Stack Developer",
+        "challenges": "Implementing animations with AOS, integrating Firebase authentication, and creating a smooth Swiper carousel for testimonials.",
+        "features": [
+            "Dynamic content filtering using Match Sorter",
+            "Firebase authentication and user data storage",
+            "Smooth scrolling animations with AOS",
+            "Carousel for testimonials using Swiper",
+            "Mobile and desktop responsive layout"
+        ],
+        "tools": [
+            "DaisyUI",
+            "SweetAlert2",
+            "React Helmet Async",
+            "React Hot Toast",
+            "Swiper",
+            "AOS"
+        ],
+        "creationDate": "19-11-2024"
+    },
+    {
+        "name": "Coffee Store Platform",
+        "description": "An interactive coffee store application for browsing, customizing, and ordering various coffee products.",
+        "image": "https://i.ibb.co.com/pwd3g06/Screenshot-2024-12-10-165236.jpg",
+        "technologies": [
+            "Html",
+            "Css",
+            "Tailwind Css",
+            "JavaScript",
+            "React",
+            "React Router",
+            "Firebase"
+        ],
+        "liveDemo": "https://coffee-store-abdullah-107189.web.app/",
+        "github": "https://github.com/abdullah107189/coffee-store-client-side",
+        "duration": "5 days",
+        "role": "Frontend Developer",
+        "challenges": "Setting up Firebase authentication, implementing a dynamic product filtering system, and creating responsive designs for all devices.",
+        "features": [
+            "User authentication with Firebase",
+            "Responsive design for both mobile and desktop",
+            "Interactive product filtering using Match Sorter",
+            "Stylish UI with DaisyUI components",
+            "Toast notifications for user actions"
+        ],
+        "tools": [
+            "React Icons",
+            "SweetAlert2",
+            "React Hot Toast",
+            "LocalForage",
+            "DaisyUI",
+            "Figma",
+            "Github"
+        ],
+        "creationDate": "10-11-2024"
+    }
+]

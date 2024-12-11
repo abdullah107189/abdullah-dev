@@ -14,6 +14,7 @@ const Banner = () => {
         }, 3000);
         return () => clearInterval(interval)
     }, [])
+
     return (
         <header style={{ minHeight: 'calc(100vh - 65px)' }} className="relative flex items-center px-4">
             {/* Decorative Shapes */}
@@ -23,7 +24,6 @@ const Banner = () => {
             <div data-aos="fade-up" className='grid grid-cols-12 items-center z-10 md:m-0 mt-10'>
                 {/* Social Media Links */}
                 <div className="hidden md:flex space-y-4 flex-col items-start justify-center">
-
                     <a
                         data-aos="fade-left" data-aos-delay="600"
                         href="https://github.com"
@@ -106,7 +106,6 @@ const Banner = () => {
                         className='absolute w-[250px] h-[450px] md:w-[200px] md:h-[400px] lg:w-[250px] xl:w-[300px] xl:h-[500px]   left-0 object-cover rounded-2xl p-1 transition-all duration-1000 ease-in-out'
                         src={images[currentIndex]}
                         alt="" />
-
                     <img
                         data-aos="fade-left" data-aos-delay="200"
                         className='absolute w-[200px] h-[200px] md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[200px] xl:w-[250px] xl:h-[250px] object-top lg:top-44 md:top-44 z-10 top-48 right-0 object-cover rounded-2xl p-1 ease-in-out transition-all duration-1000'
@@ -117,7 +116,6 @@ const Banner = () => {
                         className='absolute w-[200px] h-[200px] md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[200px]  object-top bottom-0 md:right-[25%] right-[20%]  z-20 object-cover rounded-2xl p-1 ease-in-out transition-all duration-1000'
                         src={images[(currentIndex + 2) % images.length]}
                         alt="" />
-
                 </div>
             </div>
         </header >

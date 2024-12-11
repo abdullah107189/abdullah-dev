@@ -1,4 +1,5 @@
 import Banner from "../../Components/Banner/Banner";
+import Projects from "../Projects/Projects";
 
 const Home = () => {
     return (
@@ -24,57 +25,7 @@ const Home = () => {
 
             {/* Projects Section */}
             <section id="projects" className="py-16 bgWhite black">
-                <div className="max-w-7xl mx-auto px-6">
-                    <h2 className="text-3xl font-bold text-center text-[#60f318]">
-                        My Projects
-                    </h2>
-                    <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {/* Project Card 1 */}
-                        <div className="bgGreen border border-gray-300 shadow-md p-6 rounded-lg">
-                            <h3 className="text-xl font-semibold">Project One</h3>
-                            <p className="mt-2 text-sm">
-                                A brief description of the project. It demonstrates my skills
-                                in the MERN stack, API integration, and responsive design.
-                            </p>
-                            <a
-                                href="#"
-                                className="mt-4 inline-block text-[#60f318] hover:underline"
-                            >
-                                View Project
-                            </a>
-                        </div>
-
-                        {/* Project Card 2 */}
-                        <div className="bgGreen border border-gray-300 shadow-md p-6 rounded-lg">
-                            <h3 className="text-xl font-semibold">Project Two</h3>
-                            <p className="mt-2 text-sm">
-                                A brief description of the project. ItI&apos;s a dynamic web
-                                application that uses React and Redux for state management.
-                            </p>
-                            <a
-                                href="#"
-                                className="mt-4 inline-block text-[#60f318] hover:underline"
-                            >
-                                View Project
-                            </a>
-                        </div>
-
-                        {/* Project Card 3 */}
-                        <div className="bgGreen border border-gray-300 shadow-md p-6 rounded-lg">
-                            <h3 className="text-xl font-semibold">Project Three</h3>
-                            <p className="mt-2 text-sm">
-                                A brief description of the project. It&apos;s a responsive web
-                                application built with Node.js and MongoDB for the backend.
-                            </p>
-                            <a
-                                href="#"
-                                className="mt-4 inline-block text-[#60f318] hover:underline"
-                            >
-                                View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <Projects></Projects>
             </section>
 
             {/* Services Section */}

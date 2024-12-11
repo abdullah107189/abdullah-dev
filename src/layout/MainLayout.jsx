@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 import { useEffect, useState } from "react";
@@ -12,7 +12,7 @@ const MainLayout = () => {
         AOS.init();
         setTimeout(() => {
             setPageLoading(false)
-        }, 100);
+        }, 0);
     }, [])
     return (
         <>
@@ -21,6 +21,7 @@ const MainLayout = () => {
                     <Preloader></Preloader>
                     :
                     < div >
+                        <ScrollRestoration />
                         <Navbar></Navbar>
                         <div className="max-w-7xl mx-auto">
                             <Outlet></Outlet>

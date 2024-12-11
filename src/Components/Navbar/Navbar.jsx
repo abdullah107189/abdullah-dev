@@ -1,6 +1,6 @@
+import { Link,  } from 'react-scroll';
 import { useEffect, useState } from "react";
 import './Navbar.css'
-import { NavLink } from "react-router-dom";
 import Toggle from "../Toggle";
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -32,31 +32,35 @@ const Navbar = () => {
 
                         {/* Desktop Menu */}
                         <div className="hidden md:flex space-x-8 navbarA items-center" >
-                            <NavLink
-                                to="/#about"
+                            <Link
+                                smooth={true} duration={500}
+                                to="about"
                                 className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                             >
                                 About
-                            </NavLink>
+                            </Link>
 
-                            <NavLink
-                                to={"/#projects"}
+                            <Link
+                                smooth={true} duration={500}
+                                to="projects"
                                 className="relative  px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                             >
                                 Projects
-                            </NavLink>
-                            <a
-                                href="#services"
+                            </Link>
+                            <Link
+                                to="services"
+                                smooth={true} duration={500}
                                 className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                             >
                                 Services
-                            </a>
-                            <a
-                                href="#contact"
+                            </Link>
+                            <Link
+                                smooth={true} duration={500}
+                                to="contact"
                                 className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                             >
                                 Contact
-                            </a>
+                            </Link>
                             <Toggle></Toggle>
                         </div>
 
