@@ -3,7 +3,7 @@ import Projects from "../Projects/Projects";
 
 const Home = () => {
     return (
-        <div className=" text-gray-800">
+        <div className=" text-gray-800" id="home">
             <Banner></Banner>
             {/* About Me Section */}
             <section id="about" className="py-16 bgWhite black">

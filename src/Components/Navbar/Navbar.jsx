@@ -1,4 +1,4 @@
-import { Link,  } from 'react-scroll';
+import { Link, } from 'react-scroll';
 import { useEffect, useState } from "react";
 import './Navbar.css'
 import Toggle from "../Toggle";
@@ -33,7 +33,16 @@ const Navbar = () => {
                         {/* Desktop Menu */}
                         <div className="hidden md:flex space-x-8 navbarA items-center" >
                             <Link
+                                smooth={true} duration={500} activeClass='text-[#60f318]'
+                                to='home'
+                                className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
+                            >
+                                Home
+                            </Link>
+
+                            <Link
                                 smooth={true} duration={500}
+                                activeClass='text-[#60f318]'
                                 to="about"
                                 className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
                             >
