@@ -10,24 +10,22 @@ const Projects = () => {
     const [zoomIn, setZoomIn] = useState(false)
     const [selectAll, setSelectAll] = useState(true)
     const [selectedTechnologies, setSelectedTechnologies] = useState([])
+    const [filterProject, setFilterProject] = useState([])
 
     useEffect(() => {
         axios.get('http://localhost:4545/projects')
-            // axios.get('/projects.json')
+        axios.get('/projects.json')
             .then(data => {
                 setProjects(data.data);
             })
     }, [])
 
-    // const { _id,name,description,image,technologies,liveLink,githubLink,duration,role,challenges,features,tools,creationDate} = project;
-
-    // const allTools = projects.reduce((acc, project) => {
-    //     return acc.concat(project.technologies)
-    // }, [])
-    // const uniqueTools = [...new Set(allTools)]
-    // console.log(uniqueTools);
-    // const [allTechnologies, setAllTechnologies] = useState([]);
-
+    useEffect(() => {
+        axios.get('http://localhost:4545/filter-projects', { params: { technologies: selectedTechnologies } })
+            .then(res => {
+                setFilterProject(res.data)
+            })
+    }, [selectedTechnologies])
 
     // font end functonality 
     const allTechnologies = []
@@ -42,7 +40,6 @@ const Projects = () => {
         if (selectedTechnologies.includes(selTec)) {
             // const deleteOne = selectedTechnologies.filter(s => (s !== selTec))
             // setSelectedTechnologies(deleteOne)
-
         }
         else {
             const newSelete = [...selectedTechnologies, selTec]
@@ -100,6 +97,7 @@ const Projects = () => {
         }
         console.log(newProjects);
     }
+
     return (
         <div className="maxW px-4 sticky top-20 ">
             <h2 className="text-3xl font-bold text-center text-[#60f318] my-10">
@@ -125,9 +123,9 @@ const Projects = () => {
                                 ${tec == 'JavaScript' ? 'bg-[#f7e025]/20 text-[#f7e025] font-bold p-4' : ''}
                                 ${tec == 'React' ? 'bg-[#08d9ff]/20 text-[#08d9ff] font-bold p-4' : ''}
                                 ${tec == 'Firebase' ? 'bg-[#de3308]/20 text-[#de3308] font-bold p-4' : ''}
-                                ${tec == 'MongoDB' ? 'bg-[e34f26]/20 text-[e34f26] font-bold p-4' : ''}
+                                ${tec == 'MongoDB' ? 'bg-[#e3fcf7] text-[#00684a] font-bold p-4' : ''}
                                 ${tec == 'React Router' ? 'bg-[#d10a22]/20 text-[#d10a22] font-bold p-4' : ''}
-                                ${tec == 'Html' ? 'bg-[e34f26]/20 text-[e34f26] font-bold p-4' : ''}
+                                ${tec == 'Express' ? 'bg-[white] text-gray-700 font-bold p-4' : ''}
                             `}>
                                             {tec}
                                             {selectedTechnologies.includes(tec) && <div className="absolute  w-full h-full opacity-0 group hover:opacity-100 hover:bg-black/50 rounded-full  transform duration-300">
@@ -159,14 +157,14 @@ const Projects = () => {
                                 ${tec == 'JavaScript' ? 'bg-[#f7e025]/20 text-[#f7e025] font-bold p-5' : ''}
                                 ${tec == 'React' ? 'bg-[#08d9ff]/20 text-[#08d9ff] font-bold p-5' : ''}
                                 ${tec == 'Firebase' ? 'bg-[#de3308]/20 text-[#de3308] font-bold p-5' : ''}
-                                ${tec == 'MongoDB' ? 'bg-[e34f26]/20 text-[e34f26] font-bold p-5' : ''}
+                                ${tec == 'MongoDB' ? 'bg-[#e3fcf7] text-[#00684a] font-bold p-4' : ''}
                                 ${tec == 'React Router' ? 'bg-[#d10a22]/20 text-[#d10a22] font-bold p-5' : ''}
-                                ${tec == 'Html' ? 'bg-[e34f26]/20 text-[e34f26] font-bold p-5' : ''}
+                                ${tec == 'Express' ? 'bg-[white] text-gray-700 font-bold p-5' : ''}
                                 `}
                                     >
                                         {tec}
                                         {selectedTechnologies.includes(tec) && <div className="cursor-not-allowed absolute inset-0 w-full h-full opacity-100 bg-black/50 rounded-full flex items-center justify-center">
-                                           <IoMdCheckmarkCircleOutline className="text-[#60f318] -top-1 -right-1 absolute w-4 h-4" />
+                                            <IoMdCheckmarkCircleOutline className="text-[#60f318] -top-1 -right-1 absolute w-4 h-4" />
                                         </div>}
                                     </button>
                                 </div>)
@@ -181,13 +179,16 @@ const Projects = () => {
 
                 </div>
 
+                {/* -----------cards-----------  */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 col-span-12 lg:col-span-9 gap-3  gap-3transition duration-300 h-full">
                     {
-                        projects?.map(project =>
-                            <div key={project._id} className="group card dark:bg-gray-900 dark:shadow-green-500 hover:shadow-md bg-base-100 dark:border-gray-700 flex  transition duration-300 border overflow-hidden">
-                                <figure className="shadow-lg rounded-b-xl group-hover:scale-110 transform duration-300">
+                        filterProject?.map((project, idx) =>
+
+                            <div key={idx} className="group card shadow-lg dark:shadow-green-500 hover:shadow-md flex  transition duration-300 overflow-hidden">
+                                <figure className="  group-hover:scale-110 transform duration-300">
                                     <img
-                                        className="w-full lg:h-[130px] md:h-[200px] object-cover"
+                                        referrerPolicy="no-referrer"
+                                        className="w-full lg:h-[130px]  md:h-[200px] object-cover"
                                         src={project?.image}
                                         alt="Shoes" />
                                 </figure>
@@ -207,9 +208,9 @@ const Projects = () => {
                                             ${tec == 'JavaScript' ? 'bg-[#f7e025]/20 text-[#f7e025]' : ''}
                                             ${tec == 'React' ? 'bg-[#08d9ff]/20 text-[#08d9ff]' : ''}
                                             ${tec == 'Firebase' ? 'bg-[#de3308]/20 text-[#de3308]' : ''}
-                                            ${tec == 'MongoDB' ? 'bg-[e34f26]/20 text-[e34f26]' : ''}
+                                            ${tec == 'MongoDB' ? 'bg-[#e3fcf7] text-[#00684a] font-bold p-4' : ''}
                                             ${tec == 'React Router' ? 'bg-[#d10a22]/20 text-[#d10a22]' : ''}
-                                            ${tec == 'Html' ? 'bg-[e34f26]/20 text-[e34f26]' : ''}
+                                            ${tec == 'Express' ? 'bg-[white] text-gray-700 font-bold p-5' : ''}
                                         `}
                                                 key={idx}
                                             >
@@ -225,10 +226,10 @@ const Projects = () => {
                                 </div>
                                 <div className="opacity-0 group-hover:opacity-100 transform duration-500  absolute inset-0 bg-black/50 ">
                                     <div className="flex flex-col  gap-3 items-end justify-center h-full border text-white">
-                                        <Link to={`/projects/${project?._id}`} className=" -right-32 relative transition-all duration-300 group-hover:right-2 delay-0">
+                                        <Link to={project?.liveLink} target="_blank" className=" -right-32 relative transition-all duration-300 group-hover:right-2 delay-0">
                                             <button className=" hover:border-b-4 px-5 py-2 rounded-full border-[#60f318] transform duration-300 bg-[#60f318]/10">Live Link</button>
                                         </Link>
-                                        <Link to={`/projects/${project?._id}`} className=" -right-32 relative transition-all duration-300 group-hover:right-2 delay-100">
+                                        <Link to={project?.githubLink} target="_blank" className=" -right-32 relative transition-all duration-300 group-hover:right-2 delay-100">
                                             <button className=" hover:border-b-4 px-5 py-2 rounded-full border-[#60f318] transform duration-300 bg-[#60f318]/10">Github Link</button>
                                         </Link>
                                         <Link to={`/projects/${project?._id}`} className=" -right-32 relative transition-all duration-300 group-hover:right-2 delay-200">
