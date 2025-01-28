@@ -186,7 +186,6 @@ const Projects = () => {
             onClick={() => setLimit(false)}
             className="md:w-1/4 w-1/2 black px-5 rounded-full py-2 border border-[#60f318] hover:shadow-[#60f318] hover:shadow-custom font-semibold hover:bg-gray-700 hover:black transition duration-200 md:mt-10 mt-5"
           >
-            {" "}
             Show All
           </button>
         </div>
