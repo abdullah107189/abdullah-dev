@@ -1,10 +1,15 @@
-import { useLoaderData } from "react-router-dom";
+import { useState } from "react";
+import { LuCopyCheck, LuCopyPlus } from "react-icons/lu";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const ProjectDetails = () => {
+  const [isEmailCopy, setIsEmailCopy] = useState(false);
+  const [isPassCopy, setIsPassCopy] = useState(false);
   const projectInfo = useLoaderData();
   const {
     name,
     description,
+    adminAccess,
     image,
     technologies,
     liveDemo,
@@ -16,9 +21,33 @@ const ProjectDetails = () => {
     tools,
     creationDate,
   } = projectInfo || {};
+  const navigate = useNavigate();
+  const handleCopy = async (value, type) => {
+    console.log(value);
+    try {
+      await navigator.clipboard.writeText(value);
+      if (type == "email") {
+        setIsEmailCopy(true);
+      } else {
+        setIsPassCopy(true);
+      }
+      setTimeout(() => {
+        if (type == "email") {
+          setIsEmailCopy(false);
+        } else {
+          setIsPassCopy(false);
+        }
+      }, 2000);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
-    <div className="min-h-screen md:mb-10 my-5">
-      <div className=" mx-auto ">
+    <div className="min-h-screen ">
+      <button onClick={() => navigate(-1)} className="actionBtn my-1">
+        Back
+      </button>
+      <div className=" mx-auto my-2">
         <div className="rounded-3xl md:shadow-2xl shadow-xl overflow-hidden dark:text-gray-50">
           <div className="relative">
             <img
@@ -38,6 +67,43 @@ const ProjectDetails = () => {
           </div>
           <div className="md:p-8 p-3 space-y-8">
             {/* duration, role, created  */}
+
+            {adminAccess && (
+              <div>
+                <div className="flex gap-2 items-center">
+                  <p>
+                    <span className="font-bold">Email : </span>
+                    {adminAccess?.[0]?.email}
+                  </p>
+                  <button
+                    className="p-1 rounded-full"
+                    onClick={() => handleCopy(adminAccess?.[0]?.email, "email")}
+                  >
+                    {!isEmailCopy ? (
+                      <LuCopyPlus className="w-6 h-6" />
+                    ) : (
+                      <LuCopyCheck className="w-6 h-6 text-green-300" />
+                    )}
+                  </button>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <p>
+                    <span className="font-bold">Pass : </span>
+                    {adminAccess?.[1]?.pass}
+                  </p>
+                  <button
+                    className="p-1 rounded-full"
+                    onClick={() => handleCopy(adminAccess?.[1]?.pass, "pass")}
+                  >
+                    {!isPassCopy ? (
+                      <LuCopyPlus className="w-6 h-6 " />
+                    ) : (
+                      <LuCopyCheck className="w-6 h-6 text-green-300" />
+                    )}
+                  </button>
+                </div>
+              </div>
+            )}
             <p className=" text-lg leading-relaxed">{description}</p>
             <div className="flex flex-wrap md:mt-4 mt-2">
               <div className="mr-4 mb-2">
@@ -109,6 +175,21 @@ const ProjectDetails = () => {
                                                 ? "bg-[white] text-gray-700 font-bold p-4"
                                                 : ""
                                             }
+                                            ${
+                                              tec == "JWT"
+                                                ? "bg-[white] text-gray-700 font-bold p-4"
+                                                : ""
+                                            }
+                                            ${
+                                              tec == "Node.js"
+                                                ? "bg-[#8fc708] text-[#3a3a3a] font-bold p-4"
+                                                : ""
+                                            }
+                                            ${
+                                              tec == "Stripe"
+                                                ? "bg-[#6860ff] text-white font-bold p-4"
+                                                : ""
+                                            }
                                         `}
                     key={idx}
                   >
@@ -163,7 +244,7 @@ const ProjectDetails = () => {
                       GitHub Server Side
                     </h3>
                     <a
-                      href={github?.[1]?.["client-side"]}
+                      href={github?.[1]?.["server-side"]}
                       className="underline cursor-pointer mt-2 overflow-hidden block text-xl text-blue-500 hover:text-blue-700 transition duration-300"
                       target="_blank"
                       rel="noopener noreferrer"

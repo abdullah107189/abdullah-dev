@@ -24,6 +24,9 @@ body {
 }
 
 @layer components {
+  .actionBtn {
+    @apply black px-5 rounded-full py-2 border border-[#60f318] hover:shadow-[#60f318] hover:shadow-custom font-semibold hover:bg-[#60f318]/10 hover:black transition duration-200;
+  }
   .black {
     color: var(--text-color);
   }

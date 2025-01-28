@@ -319,5 +319,54 @@
             "Github"
         ],
         "creationDate": "10-11-2024"
+    },
+    {
+        "name": "Employee Management System",
+        "description": "Employee Management System is a comprehensive platform for managing employee records, roles, and payroll. It features role-based access for Admin, HR, and Employees, with secure authentication and payment integration.",
+        "image": "https://i.ibb.co.com/RS5b918/Screenshot-2025-01-28-191726-1.png",
+        "technologies": [
+            "MongoDB",
+            "Express",
+            "React",
+            "Node.js",
+            "JWT (JSON Web Token)",
+            "Stripe",
+            "Tailwind CSS",
+            "React Router",
+            "Firebase"
+        ],
+        "liveDemo": "https://employee-managment-49560.web.app/",
+        "github": [
+            {
+                "client-side": "https://github.com/abdullah107189/Employee-Management-client-side"
+            },
+            {
+                "server-side": "https://github.com/abdullah107189/Employee-Management-server-side"
+            }
+        ],
+        "duration": "7 days",
+        "role": "Full Stack Developer",
+        "challenges": "Implementing role-based access control for Admin, HR, and Employees while ensuring secure payment and smooth user experience.",
+        "features": [
+            "Secure authentication with JWT",
+            "Stripe integration for payroll management",
+            "Role-based access control for Admin, HR, and Employees",
+            "Interactive dashboards with Recharts",
+            "Real-time notifications using SweetAlert2",
+            "Dynamic search and filtering for employee records",
+            "Responsive design with Tailwind CSS"
+        ],
+        "tools": [
+            "DaisyUI",
+            "React Hot Toast",
+            "Stripe Payment Integration",
+            "JWT Authentication",
+            "Recharts",
+            "Swiper",
+            "Vite",
+            "SweetAlert2"
+        ],
+        "creationDate": "14-01-2025"
     }
+    
 ]
