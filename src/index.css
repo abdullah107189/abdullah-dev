@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 :root {
   --text-color: #191d0f;
@@ -10,22 +9,19 @@
   --accent-color: #4bb8f2;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --text-color: #f7f9fc;
   --bg-color: #1d232a;
 }
-
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
 
-* { 
+* {
   scroll-behavior: smooth;
 }
-
-
 
 @layer components {
   .black {
@@ -55,18 +51,27 @@ body {
   .bgBlue {
     background-color: var(--accent-color);
   }
-} 
-
+}
 
 @keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* Custom Tailwind animations */
@@ -81,7 +86,12 @@ body {
     white-space: nowrap;
   }
   @keyframes blink {
-    0%, 100% { border-color: transparent; }
-    50% { border-color: #60f318; }
+    0%,
+    100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #60f318;
+    }
   }
 }

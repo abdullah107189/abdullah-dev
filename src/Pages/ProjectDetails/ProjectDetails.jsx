@@ -18,19 +18,23 @@ const ProjectDetails = () => {
   } = projectInfo || {};
   return (
     <div className="min-h-screen md:mb-10 my-5">
-      <div className=" mx-auto md:p-8">
+      <div className=" mx-auto ">
         <div className="rounded-3xl md:shadow-2xl shadow-xl overflow-hidden dark:text-gray-50">
           <div className="relative">
             <img
               src={image}
               alt={name}
-              className="w-full md:h-[450px] h-72 object-cover"
+              className="w-full h-auto object-contain"
             />
-            <div className="absolute inset-0 bg-black text-white bg-opacity-50 flex items-center justify-center">
+            <a
+              href={liveDemo}
+              target="_black"
+              className="absolute opacity-0 hover:opacity-100 transform duration-300 cursor-pointer inset-0 bg-black text-white bg-opacity-50 flex items-center justify-center"
+            >
               <h2 className="md:text-6xl text-4xl font-extrabold  drop-shadow-xl tracking-wide">
                 {name}
               </h2>
-            </div>
+            </a>
           </div>
           <div className="md:p-8 p-3 space-y-8">
             {/* duration, role, created  */}
