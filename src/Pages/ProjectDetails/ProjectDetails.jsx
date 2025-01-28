@@ -1,95 +1,117 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 const ProjectDetails = () => {
-    const projectInfo = useLoaderData()
-    console.log(projectInfo)
-    const { name, description, image, technologies, liveDemo, github, duration, role, challenges, features, tools, creationDate } = projectInfo || {}
-    console.log(github, liveDemo);
+    const projectInfo = useLoaderData();
+    const { name, description, image, technologies, liveDemo, github, duration, role, challenges, features, tools, creationDate } = projectInfo || {};
     return (
-        <div>
-            <div className="bg-white dark:bg-gray-700 dark:text-white rounded-lg shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden">
-                {/* Image Section */}
-                <img
-                    src={image}
-                    alt={name}
-                    className="w-full object-cover"
-                />
-
-                {/* Content Section */}
-                <div className="p-6">
-                    {/* Project Title */}
-                    <h2 className="text-xl font-bold mb-2">
-                        {challenges}
-                    </h2>
-
-                    {/* Description */}
-                    <p className="text-sm mb-4">
-                        {description}
-                    </p>
-
-                    {/* Features */}
-                    <div className="mb-4">
-                        <h3 className="text-sm font-semibold">Features:</h3>
-                        <ul className="list-disc list-inside text-sm">
-                            {features.map((feature, index) => (
-                                <li key={index}>{feature}</li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Technologies */}
-                    <div className="mb-4">
-                        <h3 className="text-sm font-semibold">Technologies:</h3>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                            {technologies.map((tech, index) => (
-                                <span
-                                    key={index}
-                                    className="bg-gray-200 text-xs font-medium px-2 py-1 rounded-full"
-                                >
-                                    {tech}
-                                </span>
-                            ))}
+        <div className="min-h-screen md:mb-10 my-5">
+            <div className=" mx-auto md:p-8">
+                <div className="rounded-3xl md:shadow-2xl shadow-xl overflow-hidden dark:text-gray-50">
+                    <div className="relative">
+                        <img
+                            src={image}
+                            alt={name}
+                            className="w-full md:h-[450px] h-72 object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black text-white bg-opacity-50 flex items-center justify-center">
+                            <h2 className="md:text-6xl text-4xl font-extrabold  drop-shadow-xl tracking-wide">{name}</h2>
                         </div>
                     </div>
-                    {/* tools*/}
-                    <div className="mb-4">
-                        <h3 className="text-sm font-semibold">Tools:</h3>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                            {tools.map((tool, index) => (
-                                <span
-                                    key={index}
-                                    className="bg-gray-200 text-xs font-medium px-2 py-1 rounded-full"
-                                >
-                                    {tool}
+                    <div className="md:p-8 p-3 space-y-8">
+
+                        {/* duration, role, created  */}
+                        <p className=" text-lg leading-relaxed">{description}</p>
+                        <div className="flex flex-wrap md:mt-4 mt-2">
+                            <div className="mr-4 mb-2">
+                                <span className=" badge shadow-md dark:shadow-gray-600 text-lg dark:bg-gray-900 p-3 rounded-full  font-medium">
+                                    Duration: {duration}
                                 </span>
-                            ))}
+                            </div>
+                            <div className="mr-4 mb-2">
+                                <span className="badge shadow-md dark:shadow-gray-600 text-lg dark:bg-gray-900 p-3 rounded-full font-medium">
+                                    Role: {role}
+                                </span>
+                            </div>
+                            <div className="mr-4 mb-2">
+                                <span className="badge shadow-md dark:shadow-gray-600 text-lg dark:bg-gray-900 p-3 rounded-full font-medium">
+                                    Created: {creationDate}
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Additional Info */}
-                    <div className="text-sm mb-4">
-                        <p><strong>Role:</strong> {role}</p>
-                        <p><strong>Duration:</strong> {duration}</p>
-                        <p><strong>Creation Date:</strong> {creationDate}</p>
-                    </div>
+                        {/* technologies  */}
+                        <div>
+                            <h3 className="text-2xl font-semibold">Technologies</h3>
+                            <ul className=" mt-3 ">
+                                {technologies.map((tec, idx) =>
+                                    <p
+                                        className={`badge font-bold p-3 m-1 pb-4
+                                            ${tec == 'Html' ? 'bg-[#e34f26]/10 text-[#e34f26] p-4' : ''}
+                                            ${tec == 'Css' ? 'bg-[#204ed8]/10 text-[#204ed8] p-4' : ''}
+                                            ${tec == 'Tailwind Css' ? 'bg-[#0eb8d5]/10 text-[#0eb8d5] p-4' : ''}
+                                            ${tec == 'JavaScript' ? 'bg-[#f7e025]/10 text-[#f7e025] p-4' : ''}
+                                            ${tec == 'React' ? 'bg-[#08d9ff]/10 text-[#08d9ff] p-4' : ''}
+                                            ${tec == 'Firebase' ? 'bg-[#de3308]/10 text-[#de3308] p-4' : ''}
+                                            ${tec == 'MongoDB' ? 'bg-[#e3fcf7] text-[#00684a] font-bold p-4' : ''}
+                                            ${tec == 'React Router' ? 'bg-[#d10a22]/10 text-[#d10a22] p-4' : ''}
+                                            ${tec == 'Express' ? 'bg-[white] text-gray-700 font-bold p-4' : ''}
+                                        `}
+                                        key={idx}
+                                    >
+                                        {tec}
+                                    </p>)}
+                            </ul>
+                        </div>
 
-                    {/* Links */}
-                    <div className="flex justify-between mt-4">
-                        <Link
-                            to={liveDemo}
-                            target="_blank"
-                            className="bg-[#60f318] text-white text-sm font-medium py-2 px-4 rounded-md shadow-md hover:bg-green-700 transition duration-200"
-                        >
-                            Live Demo
-                        </Link>
-                        <Link
-                            to={github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-gray-800 text-white text-sm font-medium py-2 px-4 rounded-md shadow-md hover:bg-gray-700 transition duration-200"
-                        >
-                            GitHub
-                        </Link>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:mt-6 mt-3">
+                            <div className="bg-white dark:bg-transparent md:p-6 p-3 rounded-lg shadow-md dark:shadow-gray-700 transition-transform transform hover:scale-105">
+                                <h3 className="text-2xl font-semibold ">Live Demo</h3>
+                                <a
+                                    href={liveDemo}
+                                    className="underline mt-2 block text-xl text-blue-500 hover:text-blue-700 transition duration-300"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {liveDemo || 'null'}
+                                </a>
+                            </div>
+
+                            <div className="bg-white dark:bg-transparent md:p-6 p-3  rounded-lg shadow-md dark:shadow-gray-700  transition-transform transform hover:scale-105">
+                                <h3 className="text-2xl font-semibold">GitHub Repository</h3>
+                                <a
+                                    href={github}
+                                    className="underline mt-2 overflow-hidden block text-xl text-blue-500 hover:text-blue-700 transition duration-300"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {github || 'null'}
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="bg-white dark:bg-transparent p-6 rounded-lg shadow-md dark:shadow-gray-700  mt-6">
+                            <h3 className="text-2xl font-semibold">Challenges</h3>
+                            <p className="mt-2 text-lg leading-relaxed">{challenges}</p>
+                        </div>
+
+                        <div className="bg-white dark:bg-transparent p-6 rounded-lg shadow-md dark:shadow-gray-700  mt-6">
+                            <h3 className="text-2xl font-semibold">Key Features</h3>
+                            <ul className="list-disc list-inside space-y-2 mt-3">
+                                {features?.map((feature, index) => (
+                                    <li key={index}>{feature}</li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="bg-white dark:bg-transparent p-6 rounded-lg shadow-md dark:shadow-gray-700  mt-6">
+                            <h3 className="text-2xl font-semibold">Tools Used</h3>
+                            <ul className="list-disc list-inside space-x-2 mt-3">
+                                {tools?.map((tool, index) => (
+                                    <li key={index} className="badge p-3 dark:bg-transparent dark:shadow-md dark:shadow-gray-700 bg-blue-100 dark:text-[#4bb8f2] text-blue-600 rounded-full">{tool}</li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

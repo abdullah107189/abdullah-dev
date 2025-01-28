@@ -16,7 +16,7 @@ const Banner = () => {
     }, [])
 
     return (
-        <header style={{ minHeight: 'calc(100vh - 65px)' }} className="relative flex items-center px-4">
+        <header style={{ minHeight: 'calc(100vh - 65px)' }} className="relative flex items-center">
             {/* Decorative Shapes */}
             <div className="absolute top-0 left-0 w-72 h-72 bg-[#4bb8f2] rounded-full blur-3xl opacity-10"></div>
             <div className="absolute right-10 top-30 w-72 h-72 bg-[#60f318] rounded-full blur-2xl opacity-10"></div>
@@ -26,7 +26,7 @@ const Banner = () => {
                 <div className="hidden md:flex space-y-4 flex-col items-start justify-center">
                     <a
                         data-aos="fade-left" data-aos-delay="600"
-                        href="https://github.com"
+                        href="https://github.com/abdullah107189"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-[#60f318] transition duration-200 black"
@@ -42,7 +42,7 @@ const Banner = () => {
                     </a>
                     <a
                         data-aos="fade-left" data-aos-delay="700"
-                        href="https://linkedin.com"
+                        href="https://www.linkedin.com/in/abdullah107189"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-[#60f318] transition duration-200 black"
@@ -55,6 +55,23 @@ const Banner = () => {
                         >
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.267c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.267h-3v-4.844c0-1.144-.023-2.617-1.594-2.617-1.594 0-1.837 1.248-1.837 2.538v4.923h-3v-10h2.888v1.367h.042c.402-.761 1.385-1.563 2.85-1.563 3.05 0 3.614 2.008 3.614 4.623v5.573z" />
                         </svg>
+                    </a>
+                    <a
+                        data-aos="fade-left" data-aos-delay="700"
+                        href="https://www.facebook.com/abdullah.shamem.5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-[#60f318] transition duration-200 black"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="w-8 h-8"
+                        >
+                            <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24h11.495v-9.294H9.691v-3.622h3.129V8.413c0-3.1 1.893-4.788 4.658-4.788 1.325 0 2.464.099 2.794.143v3.24h-1.918c-1.505 0-1.797.715-1.797 1.763v2.31h3.591l-.467 3.622h-3.124V24h6.116c.729 0 1.322-.593 1.322-1.325V1.325C24 .593 23.407 0 22.675 0z" />
+                        </svg>
+
                     </a>
                 </div>
 
@@ -107,7 +124,7 @@ const Banner = () => {
                         src={images[currentIndex]}
                         alt="" />
                     <img
-                        data-aos="fade-left" data-aos-delay="200"
+                        data-aos="fade-up" data-aos-delay="200"
                         className='absolute w-[200px] h-[200px] md:w-[150px] md:h-[150px] lg:w-[200px] lg:h-[200px] xl:w-[250px] xl:h-[250px] object-top lg:top-44 md:top-44 z-10 top-48 right-0 object-cover rounded-2xl p-1 ease-in-out transition-all duration-1000'
                         src={images[(currentIndex + 1) % images.length]}
                         alt="" />

@@ -1,13 +1,27 @@
-.navbarA a::before{
-    content:'';
+.navbarA a::before {
+    content: '';
     position: absolute;
     bottom: 0px;
     width: 0%;
     left: 0;
     height: 2px;
     background-color: #60f318;
+
     transition: all 0.5s;
 }
-.navbarA a:hover::before{
+
+.navbarA a:hover::before {
     width: 100%;
 }
+
+/* .active {
+    border-bottom: 2px solid #60f318;
+    font-weight: 600;
+    color: #60f318;
+
+}
+
+.active:hover {
+    border: none;
+    transition: all 0.5s;
+} */

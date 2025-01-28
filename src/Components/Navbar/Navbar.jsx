@@ -1,4 +1,4 @@
-import { Link, } from 'react-scroll';
+import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import './Navbar.css'
 import Toggle from "../Toggle";
@@ -13,7 +13,6 @@ const Navbar = () => {
                 setIsScrolled(false);
             }
         };
-
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
@@ -31,45 +30,53 @@ const Navbar = () => {
                         </div>
 
                         {/* Desktop Menu */}
-                        <div className="hidden md:flex space-x-8 navbarA items-center" >
-                            <Link
-                                smooth={true} duration={500} activeClass='text-[#60f318]'
-                                to='home'
-                                className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
+                        <div className="hidden md:flex space-x-8 navbarA items-center">
+                            <NavLink to={'/'}
+                                duration={500}
+                                className={({ isActive }) => `${isActive ? "active" : ""} relative px-2 transition duration-200 hover:text-[#60f318]`}
                             >
                                 Home
-                            </Link>
+                            </NavLink>
 
-                            <Link
-                                smooth={true} duration={500}
-                                activeClass='text-[#60f318]'
-                                to="about"
-                                className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
+                            <NavLink
+                                duration={500}
+                                to={"/#about"}
+                                className="relative px-2 transition duration-200 hover:text-[#60f318]"
                             >
                                 About
-                            </Link>
+                            </NavLink>
 
-                            <Link
-                                smooth={true} duration={500}
-                                to="projects"
-                                className="relative  px-2 rounded-md transition duration-200 hover:text-[#60f318]"
+                            <NavLink
+                                duration={500}
+                                to={"/#skills"}
+                                className="relative px-2 transition duration-200 hover:text-[#60f318]"
+                            >
+                                Skills
+                            </NavLink>
+
+                            <NavLink
+                                duration={500}
+                                to={"/#projects"}
+                                className="relative  px-2 transition duration-200 hover:text-[#60f318]"
                             >
                                 Projects
-                            </Link>
-                            <Link
-                                to="services"
-                                smooth={true} duration={500}
-                                className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
+                            </NavLink>
+
+                            <NavLink
+                                to={"/#services"}
+                                duration={500}
+                                className="relative px-2 transition duration-200 hover:text-[#60f318]"
                             >
                                 Services
-                            </Link>
-                            <Link
-                                smooth={true} duration={500}
-                                to="contact"
-                                className="relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
+                            </NavLink>
+
+                            <NavLink
+                                to={"/#contact"}
+                                className="relative px-2 transition duration-200 hover:text-[#60f318]"
                             >
                                 Contact
-                            </Link>
+                            </NavLink>
+
                             <Toggle></Toggle>
                         </div>
 
@@ -110,31 +117,52 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
 
-                <div className={`${isOpen ? 'right-2 top-[65px]' : '-right-72 '} shadow-lg md:hidden absolute md:w-2/3 w-1/3 text-center transform duration-300 bgWhite rounded-lg  z-50 navbarA p-3 space-y-3`}>
-                    <a
-                        href="#about"
-                        className="block relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
+                <div className={`${isOpen ? 'right-2 top-[65px]' : '-right-72 '} shadow-lg md:hidden absolute md:w-2/3 w-1/2 min-h-[300px] flex flex-col items-center justify-center text-center transform duration-300 bgWhite rounded-lg  z-50 navbarA p-3 space-y-5 pb-5`}>
+
+                    <NavLink to={'/'}
+                        duration={500}
+                        className={({ isActive }) => `${isActive ? "active" : ""} relative px-2 transition duration-200 hover:text-[#60f318]`}
+                    >
+                        Home
+                    </NavLink>
+                    <NavLink
+                        duration={500}
+                        to={"/#about"}
+                        className="relative px-2 transition duration-200 hover:text-[#60f318]"
                     >
                         About
-                    </a>
-                    <a
-                        href="#projects"
-                        className="block relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
+                    </NavLink>
+
+                    <NavLink
+                        duration={500}
+                        to={"/#skills"}
+                        className="relative px-2 transition duration-200 hover:text-[#60f318]"
+                    >
+                        Skills
+                    </NavLink>
+
+                    <NavLink
+                        duration={500}
+                        to={"/#projects"}
+                        className="relative  px-2 transition duration-200 hover:text-[#60f318]"
                     >
                         Projects
-                    </a>
-                    <a
-                        href="#services"
-                        className="block relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
+                    </NavLink>
+
+                    <NavLink
+                        to={"/#services"}
+                        duration={500}
+                        className="relative px-2 transition duration-200 hover:text-[#60f318]"
                     >
                         Services
-                    </a>
-                    <a
-                        href="#contact"
-                        className="block relative px-2 rounded-md transition duration-200 hover:text-[#60f318]"
+                    </NavLink>
+
+                    <NavLink
+                        to={"/#contact"}
+                        className="relative px-2 transition duration-200 hover:text-[#60f318]"
                     >
                         Contact
-                    </a>
+                    </NavLink>
                 </div>
             </nav>
         </div>

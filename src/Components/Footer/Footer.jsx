@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="bgWhite py-12">
+        <footer className="bgWhite md:pt-12 pt-5 pb-5">
             <div className="max-w-7xl mx-auto flex flex-wrap gap-10 justify-between px-4">
                 {/* About Section */}
                 <div className="flex-1 min-w-[200px]">
@@ -32,14 +32,7 @@ const Footer = () => {
                                 Projects
                             </a>
                         </li>
-                        <li>
-                            <a
-                                href="#services"
-                                className="hover:text-[#60f318] transition-colors duration-200"
-                            >
-                                Services
-                            </a>
-                        </li>
+
                         <li>
                             <a
                                 href="#contact"
@@ -69,28 +62,32 @@ const Footer = () => {
                     </h3>
                     <div className="flex space-x-4 text-xl">
                         <a
-                            href="#"
+                            href="https://www.facebook.com/abdullah.shamem.5"
+                            target="_blank"
                             className="hover:text-[#60f318] transition-colors duration-200"
                         >
-                            <i className="fab fa-facebook"></i> {/* Facebook Icon */}
+                            <i className="fab fa-facebook"></i>
                         </a>
                         <a
-                            href="#"
+                            href="https://x.com/shamem107189"
+                            target="_blank"
                             className="hover:text-[#60f318] transition-colors duration-200"
                         >
-                            <i className="fab fa-twitter"></i> {/* Twitter Icon */}
+                            <i className="fab fa-twitter"></i>
                         </a>
                         <a
-                            href="#"
+                            href="https://www.linkedin.com/in/abdullah107189/"
+                            target="_blank"
                             className="hover:text-[#60f318] transition-colors duration-200"
                         >
-                            <i className="fab fa-linkedin"></i> {/* LinkedIn Icon */}
+                            <i className="fab fa-linkedin"></i>
                         </a>
                         <a
-                            href="#"
+                            href="https://github.com/abdullah107189"
+                            target="_blank"
                             className="hover:text-[#60f318] transition-colors duration-200"
                         >
-                            <i className="fab fa-github"></i> {/* GitHub Icon */}
+                            <i className="fab fa-github"></i>
                         </a>
                     </div>
                 </div>
@@ -98,7 +95,7 @@ const Footer = () => {
 
             {/* Bottom Section */}
             <div
-                className="mt-12 border-t border-gray-300 pt-6 text-center max-w-7xl mx-auto px-4"
+                className="md:mt-12 mt-5 border-t border-gray-300 md:pt-5 pt-3 text-center max-w-7xl mx-auto"
                 style={{
                     background: "linear-gradient(60%, #f6fbec 60%, rgba(96, 243, 24, 0.2) 30%, #60f318 10%)",
                 }}

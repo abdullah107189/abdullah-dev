@@ -2,20 +2,34 @@ import { useState } from "react";
 import './dawnloadButton.css'
 import { FaCloudDownloadAlt } from "react-icons/fa";
 import downloading from '../../assets/donwloading.gif'
+import Swal from 'sweetalert2'
 import { IoIosCloudDone } from "react-icons/io";
 const DownloadButton = () => {
     const [downloadState, setDownloadState] = useState('click')
 
     const handleDownlaodCV = () => {
-        setDownloadState('downloading')
-        const link = document.createElement('a')
-        // link.href = '/resume.pdf';
-        // link.download = 'hello bro';
-        console.log('object');
-        link.click()
-        setTimeout(() => {
-            setDownloadState('success')
-        }, 2000);
+        Swal.fire({
+            title: "Do you want to save the changes?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Download Resume",
+            denyButtonText: `Just Show Resume`
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                setDownloadState('downloading')
+                const link = document.createElement('a')
+                link.href = '/resume.pdf';
+                link.download = 'resume.pdf';
+                console.log('object');
+                link.click()
+                setTimeout(() => {
+                    setDownloadState('success')
+                }, 2000);
+            } else if (result.isDenied) {
+                window.open('https://docs.google.com/document/d/1PtJvPRjswLfEcoB5NFIqaxYMoROYaqhitLb124bbeE8/edit?usp=sharing', '_blank');
+            }
+        });
     }
     return (
         <button
