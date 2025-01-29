@@ -128,7 +128,7 @@ const Projects = () => {
                   target="_blank"
                   className=" -right-32 relative transition-all duration-300 group-hover:right-2 delay-0"
                 >
-                  <button className=" hover:border-b-4 px-5 py-2 rounded-full border-[#60f318] transform duration-300 bg-gray-700">
+                  <button className=" hover:actionBtn border-none !font-normal px-5 py-2 rounded-full transform duration-300 !text-white !bg-gray-700">
                     Live Link
                   </button>
                 </Link>
@@ -140,7 +140,7 @@ const Projects = () => {
                     target="_blank"
                     className=" -right-32 relative transition-all duration-300 group-hover:right-2 delay-100"
                   >
-                    <button className=" hover:border-b-4 px-5 py-2 rounded-full border-[#60f318] transform duration-300 bg-gray-700">
+                    <button className=" hover:actionBtn border-none !font-normal px-5 py-2 rounded-full transform duration-300 !text-white !bg-gray-700">
                       Github Link
                     </button>
                   </Link>
@@ -151,7 +151,7 @@ const Projects = () => {
                       target="_blank"
                       className=" -right-32 relative transition-all duration-300 group-hover:right-2 delay-100"
                     >
-                      <button className=" hover:border-b-4 px-5 py-2 rounded-full border-[#60f318] transform duration-300 bg-gray-700">
+                      <button className=" hover:actionBtn border-none !font-normal px-5 py-2 rounded-full transform duration-300 !text-white !bg-gray-700">
                         Client Side
                       </button>
                     </Link>
@@ -160,7 +160,7 @@ const Projects = () => {
                       target="_blank"
                       className=" -right-32 relative transition-all duration-300 group-hover:right-2 delay-100"
                     >
-                      <button className=" hover:border-b-4 px-5 py-2 rounded-full border-[#60f318] transform duration-300 bg-gray-700">
+                      <button className=" hover:actionBtn border-none !font-normal px-5 py-2 rounded-full transform duration-300 !text-white !bg-gray-700">
                         Server Side
                       </button>
                     </Link>
@@ -171,7 +171,7 @@ const Projects = () => {
                   to={`/projects/${project?._id}`}
                   className=" -right-32 relative transition-all duration-300 group-hover:right-2 delay-200"
                 >
-                  <button className=" hover:border-b-4 px-5 py-2 rounded-full border-[#60f318] transform duration-100  bg-gray-700">
+                  <button className=" hover:actionBtn border-none !font-normal px-5 py-2 rounded-full transform duration-100  !text-white !bg-gray-700">
                     Full Details
                   </button>
                 </Link>
