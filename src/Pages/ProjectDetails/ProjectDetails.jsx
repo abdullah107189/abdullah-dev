@@ -167,7 +167,7 @@ const ProjectDetails = () => {
                                             }
                                             ${
                                               tec == "React Router"
-                                                ? "bg-[#d10a22]/10 text-[#d10a22] p-4"
+                                                ? "bg-white text-[#d10a22] p-4"
                                                 : ""
                                             }
                                             ${

@@ -19,9 +19,9 @@ const ContactInformation = () => {
   return (
     <div className="">
       <SectionHeader title={"Contact"}></SectionHeader>
-      <div className="grid dark:text-white grid-cols-1 md:grid-cols-2 gap-6 md:p-6 p-3 rounded-2xl border dark:border-gray-700 shadow-lg mb-5">
+      <div className="grid dark:text-white grid-cols-1 md:grid-cols-2 gap-6 md:p-6 p-3 rounded-2xl border dark:border-gray-700 shadow mb-5">
         {/* Left Column: Email Form */}
-        <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-2xl shadow">
+        <div className="bg-gray-100 dark:bg-gray-800 p-6 border dark:border-gray-700 rounded-2xl shadow-lg">
           <h3 className="text-2xl font-semibold mb-4">Send Me an Email</h3>
           <form onSubmit={handleEmailSubmit}>
             <div className="mb-4">
@@ -62,7 +62,7 @@ const ContactInformation = () => {
 
         {/* Right Column: Contact Details */}
 
-        <div className="bg-gray-100 dark:bg-transparent border dark:border-gray-700 md:p-6 p-4 rounded-lg shadow-lg ">
+        <div className="bg-gray-100 dark:bg-gray-800 border dark:border-gray-700 md:p-6 p-4 rounded-lg shadow-lg ">
           <h3 className="text-3xl font-semibold dark:text-gray-200 text-gray-800 mb-6 text-center">
             Contact Details
           </h3>
@@ -97,7 +97,7 @@ const ContactInformation = () => {
               </h4>
               <div className="flex items-center gap-3 text-blue-500 p-3 rounded-lg transition duration-300">
                 <FaMapMarkerAlt className="h-6 w-6 " />
-                <p className="text-gray-700">{location}</p>
+                <p className="dark:text-gray-200 text-gray-700">{location}</p>
               </div>
             </div>
           </div>
