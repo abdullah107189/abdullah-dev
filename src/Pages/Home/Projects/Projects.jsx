@@ -1,22 +1,23 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaLongArrowAltDown } from "react-icons/fa";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import SectionHeader from "../../../Components/SectionHeader";
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
+  // const [projects, setProjects] = useState([]);
   const [limit, setLimit] = useState(true);
-  useEffect(() => {
-    axios
-      .get(
+  const { data: projects = [] } = useQuery({
+    queryKey: ["projects", limit],
+    queryFn: async () => {
+      const { data } = await axios.get(
         `https://abdullah-dev-server-side.vercel.app/projects?limit=${limit}`
-      )
-      .then((res) => {
-        // setProjects([...res.data].reverse());
-        setProjects(res.data);
-      });
-  }, [limit]);
+      );
+      return data;
+    },
+  });
+
   return (
     <div className="maxW  sticky top-20 ">
       <SectionHeader title={"Project"}></SectionHeader>
@@ -24,7 +25,7 @@ const Projects = () => {
         {projects?.map((project, idx) => (
           <div
             key={idx}
-            className="group card shadow-lg dark:shadow-green-500/50 hover:shadow-xl flex  transition duration-300 overflow-hidden"
+            className="group card dark:border-gray-600 shadow-lg dark:shadow-custom border dark:shadow-green-500/50 hover:shadow-custom flex  transition duration-300 overflow-hidden"
           >
             <figure className="  group-hover:scale-110 transform duration-300">
               <img
