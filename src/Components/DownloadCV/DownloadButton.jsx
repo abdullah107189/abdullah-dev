@@ -19,15 +19,15 @@ const DownloadButton = () => {
             if (result.isConfirmed) {
                 setDownloadState('downloading')
                 const link = document.createElement('a')
-                link.href = '/resume.pdf';
-                link.download = 'resume.pdf';
+                link.href = '/abdullah107189 resume.pdf';
+                link.download = 'abdullah107189 resume.pdf';
                 console.log('object');
                 link.click()
                 setTimeout(() => {
                     setDownloadState('success')
                 }, 2000);
             } else if (result.isDenied) {
-                window.open('https://docs.google.com/document/d/1PtJvPRjswLfEcoB5NFIqaxYMoROYaqhitLb124bbeE8/edit?usp=sharing', '_blank');
+                window.open('https://drive.google.com/file/d/1yjS1r5iH2gAoxBQ4_9mWHqGoEDvjiAr0/view', '_blank');
             }
         });
     }
