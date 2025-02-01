@@ -61,7 +61,7 @@ const Skills = () => {
       {
         name: "JWT",
         bg: "bg-white/20",
-        img: "https://i.ibb.co.com/xKfhyQYr/icons8-jwt-500.png",
+        img: "https://i.postimg.cc/vZM1ppmy/jwt-logo.png",
       },
     ],
     Tools: [

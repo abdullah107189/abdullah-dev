@@ -32,7 +32,7 @@ const Projects = () => {
                 referrerPolicy="no-referrer"
                 className="w-full lg:h-[130px]  md:h-[200px] object-cover"
                 src={project?.image}
-                alt="Shoes"
+                alt={project?.name}
               />
             </figure>
             <div className="p-2 flex card-body">
