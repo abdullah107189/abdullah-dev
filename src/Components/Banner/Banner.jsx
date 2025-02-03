@@ -141,6 +141,7 @@ const Banner = () => {
           </div>
         </div>
 
+        {/* image part  */}
         <div className="md:mt-0 mt-10 md:col-span-5 col-span-12 relative xl:h-[600px] lg:h-[500px] md:h-[450px] h-[600px] w-full ">
           <img
             data-aos="fade-right"
