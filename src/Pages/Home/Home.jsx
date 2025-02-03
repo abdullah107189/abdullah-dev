@@ -29,7 +29,7 @@ const Home = () => {
       <Banner></Banner>
       {/* About Me Section */}
       <section id="about" className="md:py-10 py-5 bgWhite black">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="mx-auto">
           <About></About>
         </div>
       </section>

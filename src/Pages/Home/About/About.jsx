@@ -1,29 +1,98 @@
 import SectionHeader from "../../../Components/SectionHeader";
+import { motion } from "framer-motion";
 
 const About = () => {
-    return (
-        <div>
-            <SectionHeader title={'About Me'}></SectionHeader>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-10 gap-5">
-                <div className="card bg-base-100 shadow-xl p-4 dark:bg-gray-800 hover:scale-105 transform duration-300">
-                    <h1 className="text-xl mb-2 font-bold">About me</h1>
-                    <p>Hi, I&apos;m Abdullah—a passionate developer and problem solver with an insatiable curiosity for technology. My journey into programming started as a simple fascination with how websites worked and has since grown into a full-fledged love for creating user-friendly and impactful digital solutions.</p>
-                </div>
-                <div className="card bg-base-100 shadow-xl p-4 dark:bg-gray-800 hover:scale-105 transform duration-300">
-                    <h1 className="text-xl mb-2 font-bold">My Journey</h1>
-                    <p>
-                        My programming journey began with writing simple HTML pages and has evolved into building complex projects with React, Tailwind CSS, and other modern technologies. What keeps me going is the thrill of learning new tools and frameworks, solving challenging problems, and seeing my ideas come to life through code.
-                    </p>
-                </div>
-                <div className="card bg-base-100 shadow-xl p-4 dark:bg-gray-800 hover:scale-105 transform duration-300">
-                    <h1 className="text-xl mb-2 font-bold">What I Love Doing</h1>
-                    <p>I specialize in front-end development and take pride in creating clean, responsive, and visually appealing designs. My favorite part of any project is ensuring a seamless user experience. However, I also enjoy diving into backend development, learning new algorithms, and exploring how databases work.
-                        Beyond coding, I find joy in collaboration and problem-solving. Brainstorming with a team to tackle a difficult issue or refine a project is something I truly enjoy.
-                    </p>
-                </div>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <div className="md:my-10 my-5">
+        <SectionHeader title={"about"}></SectionHeader>
+      </div>
+
+      <div className="flex items-center justify-center ">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-center md:p-5 bg-gray-800 rounded-3xl shadow-2xl border border-gray-700"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-white/10 p-6 rounded-xl shadow-lg border border-gray-600 text-left md:col-span-9"
+            >
+              <h3 className="text-2xl font-bold text-blue-400 mb-2">
+                Who I Am
+              </h3>
+              <p className="text-lg text-gray-300">
+                I am a passionate{" "}
+                <span className="text-blue-400">MERN Stack Developer</span>{" "}
+                specializing in high-performance web applications with{" "}
+                <span className="text-blue-400">
+                  React.js, Next.js, Tailwind CSS, Firebase, and MongoDB
+                </span>
+                .
+              </p>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-white/10 p-6 rounded-xl shadow-lg border border-gray-600 text-left md:col-span-3"
+            >
+              <h3 className="text-2xl font-bold text-blue-400 mb-2">
+                My Passion
+              </h3>
+              <p className="text-lg text-gray-300">
+                I love learning new technologies, solving challenging problems,
+                and continuously improving my skills. Traveling and gaming are
+                my favorite hobbies.
+              </p>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-white/10 p-6 rounded-xl shadow-lg border border-gray-600 text-left md:col-span-3"
+            >
+              <h3 className="text-2xl font-bold text-blue-400 mb-2">
+                Future Goals
+              </h3>
+              <p className="text-lg text-gray-300">
+                My goal is to become a highly skilled software engineer, working
+                on cutting-edge technologies and contributing to innovative
+                projects that make a difference.
+              </p>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-white/10 p-6 rounded-xl shadow-lg border border-gray-600 text-left md:col-span-3"
+            >
+              <h3 className="text-2xl font-bold text-blue-400 mb-2">
+                My Skills
+              </h3>
+              <p className="text-lg text-gray-300">
+                I have strong expertise in JavaScript, React.js, Next.js,
+                Node.js, Express.js, MongoDB, and Firebase. I enjoy working with
+                modern UI frameworks like Tailwind CSS to build seamless and
+                responsive web applications.
+              </p>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-white/10 p-6 rounded-xl shadow-lg border border-gray-600 text-left md:col-span-6"
+            >
+              <h3 className="text-2xl font-bold text-blue-400 mb-2">
+                My Experience
+              </h3>
+              <p className="text-lg text-gray-300">
+                I have worked on various projects, developing full-stack web
+                applications with modern technologies. My expertise includes
+                frontend and backend development, database management, and cloud
+                integrations.
+              </p>
+            </motion.div>
+           
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
 };
 
 export default About;
