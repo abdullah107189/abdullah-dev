@@ -23,11 +23,13 @@ const About = () => {
               <h3 className="text-2xl font-bold text-blue-400 mb-2">
                 Who I Am
               </h3>
-              <p className="text-lg dark:text-gray-300">
+              <p className=" dark:text-gray-300">
                 I am a passionate{" "}
-                <span className="text-blue-400">MERN Stack Developer</span>{" "}
+                <span className="text-blue-400 text-lg font-semibold">
+                  MERN Stack Developer
+                </span>{" "}
                 specializing in high-performance web applications with{" "}
-                <span className="text-blue-400">
+                <span className="text-blue-400 text-lg font-semibold">
                   React.js, Next.js, Tailwind CSS, Firebase, and MongoDB
                 </span>
                 .
@@ -40,7 +42,7 @@ const About = () => {
               <h3 className="text-2xl font-bold text-blue-400 mb-2">
                 My Passion
               </h3>
-              <p className="text-lg dark:text-gray-300">
+              <p className=" dark:text-gray-300">
                 I love learning new technologies, solving challenging problems,
                 and continuously improving my skills. Traveling and gaming are
                 my favorite hobbies.
@@ -53,7 +55,7 @@ const About = () => {
               <h3 className="text-2xl font-bold text-blue-400 mb-2">
                 Future Goals
               </h3>
-              <p className="text-lg dark:text-gray-300">
+              <p className=" dark:text-gray-300">
                 My goal is to become a highly skilled software engineer, working
                 on cutting-edge technologies and contributing to innovative
                 projects that make a difference.
@@ -66,7 +68,7 @@ const About = () => {
               <h3 className="text-2xl font-bold text-blue-400 mb-2">
                 My Skills
               </h3>
-              <p className="text-lg dark:text-gray-300">
+              <p className=" dark:text-gray-300">
                 I have strong expertise in JavaScript, React.js, Next.js,
                 Node.js, Express.js, MongoDB, and Firebase. I enjoy working with
                 modern UI frameworks like Tailwind CSS to build seamless and
@@ -80,7 +82,7 @@ const About = () => {
               <h3 className="text-2xl font-bold text-blue-400 mb-2">
                 My Experience
               </h3>
-              <p className="text-lg dark:text-gray-300">
+              <p className=" dark:text-gray-300">
                 I have worked on various projects, developing full-stack web
                 applications with modern technologies. My expertise includes
                 frontend and backend development, database management, and cloud

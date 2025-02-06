@@ -1,5 +1,6 @@
 import SimpleTypeWriter from "simple-typewriter-react";
 import DownloadButton from "../DownloadCV/DownloadButton";
+// import { motion, useAnimation } from "framer-motion";
 import me from "../../assets/me.jpg";
 import me2 from "../../assets/mess-me.jpg";
 import me3 from "../../assets/ruet-me.jpg";
@@ -15,6 +16,44 @@ const Banner = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // iamge animation using framer motion
+  // const [animationStage, setAnimationStage] = useState("initial");
+
+  // const boxVariants = {
+  //   initial: { x: -100, y: 0, opacity: 0 }, // Start off-screen left
+  //   animate: { x: 100, y: 0, opacity: 1, transition: { duration: 1 } }, // Move to center
+  //   exit: { x: 100, y: 0, opacity: 0, transition: { duration: 1 } }, // Move off-screen right
+  //   bottom: { x: 0, y: 100, opacity: 0, transition: { duration: 1 } }, // Move off-screen bottom
+  //   up: { x: 0, y: -100, opacity: 0, transition: { duration: 1 } }, // Move off-screen top
+  // };
+  // const boxVariants = {
+  //   initial: { x: 0, y: 0, opacity: 1 }, // Start in the center
+  //   right: { x: 100, y: 0, opacity: 1, transition: { duration: 1 } },
+  //   bottom: { x: 100, y: 100, opacity: 1, transition: { duration: 1 } },
+  //   left: { x: 0, y: 100, opacity: 1, transition: { duration: 1 } },
+  //   up: { x: 0, y: 0, opacity: 1, transition: { duration: 1 } },
+  // };
+  // const numBoxes = 3; // Number of boxes
+  // const boxDelays = [1000, 2000, 3000]; // Delays for each box (in ms)
+  // const boxAnimations = Array(numBoxes)
+  //   .fill(null)
+  //   .map(() => useAnimation()); // Create an array of animation controls
+
+  // useEffect(() => {
+  //   const animateSequence = async (index) => {
+  //     await boxAnimations[index].start("right");
+  //     await boxAnimations[index].start("bottom");
+  //     await boxAnimations[index].start("left");
+  //     await boxAnimations[index].start("up");
+  //     animateSequence(index); // Loop the animation for this box
+  //   };
+
+  //   for (let i = 0; i < numBoxes; i++) {
+  //     setTimeout(() => {
+  //       animateSequence(i);
+  //     }, boxDelays[i]); // Start each box with its delay
+  //   }
+  // }, []);
   return (
     <header
       style={{ minHeight: "calc(100vh - 65px)" }}
@@ -163,6 +202,24 @@ const Banner = () => {
             alt=""
           />
         </div>
+        {/* <div style={{ width: 300, height: 300, position: "relative" }}>
+          {Array(numBoxes)
+            .fill(null)
+            .map((_, index) => (
+              <motion.div
+                key={index}
+                style={{
+                  width: 50,
+                  height: 50,
+                  backgroundColor: ["red", "blue", "green"][index], // Different colors
+                  position: "absolute",
+                }}
+                variants={boxVariants}
+                initial="initial"
+                animate={boxAnimations[index]}
+              />
+            ))}
+        </div> */}
       </div>
     </header>
   );

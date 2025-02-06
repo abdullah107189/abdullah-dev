@@ -1,17 +1,64 @@
 import { useState } from "react";
 import SectionHeader from "../../../Components/SectionHeader";
-import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaPhoneAlt,
+  FaWhatsapp,
+  FaMapMarkerAlt,
+  FaSpinner,
+  FaCheckCircle,
+} from "react-icons/fa";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 const ContactInformation = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  const handleEmailSubmit = (e) => {
+  const handleEmailSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Email sent successfully!");
+    setLoading(true);
+    const emailBody = {
+      service_id: "service_6s53hcj",
+      template_id: "template_9w7bxbh",
+      user_id: "bIMJJ1XPJW4mAIls5",
+      template_params: {
+        from_name: name,
+        from_email: email,
+        to_name: "Md. Abdullah All Shamem",
+        message: message,
+      },
+    };
+    try {
+      // Replace this with your actual API call
+      const { data } = await axios.post(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        emailBody
+      );
+      console.log(data);
+      setName("");
+      setEmail("");
+      setMessage("");
+      toast.success("Email sent successfully!");
+      setLoading(false);
+      // Set success state to true after successful API call
+      setSuccess(true);
+
+      // Set a timer to remove the success icon after 2 seconds
+      setTimeout(() => {
+        setSuccess(false);
+      }, 2000);
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast.error("Failed to send email.");
+    } finally {
+      setLoading(false);
+    }
   };
 
+  // right side
   const phoneNumber = "+8801771542594";
   const whatsappNumber = "+8801771542594";
   const location = "Rajshahi, Dhaka";
@@ -25,8 +72,21 @@ const ContactInformation = () => {
           <h3 className="text-2xl font-semibold mb-4">Send Me an Email</h3>
           <form onSubmit={handleEmailSubmit}>
             <div className="mb-4">
+              <label className="block" htmlFor="yourName">
+                Enter Your Name
+              </label>
+              <input
+                type="text"
+                id="yourName"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="mt-1 block w-full p-2 rounded-lg focus:outline-none"
+              />
+            </div>
+            <div className="mb-4">
               <label className="block" htmlFor="email">
-                Email:
+                Enter Your Email
               </label>
               <input
                 type="email"
@@ -52,12 +112,18 @@ const ContactInformation = () => {
             </div>
             <button
               type="submit"
-              className="black px-5 rounded-full py-2 border border-[#60f318] hover:shadow-[#60f318] hover:shadow-custom font-semibold hover:bg-[#60f318]/10 hover:black transition duration-200"
+              className="black px-5 rounded-full py-2 border border-[#60f318] hover:shadow-[#60f318] hover:shadow-custom font-semibold hover:bg-[#60f318]/10 hover:black transition duration-200 flex items-center"
             >
-              Send Email
+              {loading && <FaSpinner className="animate-spin mr-2" />}
+              {success ? (
+                <>
+                  Send Email <FaCheckCircle className="text-green-500 mr-2" />
+                </>
+              ) : (
+                "Send Email"
+              )}
             </button>
           </form>
-          {status && <p className="mt-2 text-green-600">{status}</p>}
         </div>
 
         {/* Right Column: Contact Details */}

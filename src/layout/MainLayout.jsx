@@ -13,7 +13,7 @@ const MainLayout = () => {
     AOS.init();
     setTimeout(() => {
       setPageLoading(false);
-    }, 2000);
+    }, 0);
   }, []);
   return (
     <>
