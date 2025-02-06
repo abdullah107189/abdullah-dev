@@ -110,10 +110,7 @@ const ContactInformation = () => {
                 className="mt-1 block w-full p-2 focus:outline-none rounded-lg"
               />
             </div>
-            <button
-              type="submit"
-              className="black px-5 rounded-full py-2 border border-[#60f318] hover:shadow-[#60f318] hover:shadow-custom font-semibold hover:bg-[#60f318]/10 hover:black transition duration-200 flex items-center"
-            >
+            <button type="submit" className="actionBtn">
               {loading && <FaSpinner className="animate-spin mr-2" />}
               {success ? (
                 <>
@@ -138,7 +135,7 @@ const ContactInformation = () => {
               <h4 className="text-lg mb-3 font-semibold text-center">Phone</h4>
               <a
                 href={`tel:${phoneNumber}`}
-                className="flex items-center gap-3 text-blue-500 bg-blue-300/20 p-3 border rounded-lg hover:bg-blue-200 transition duration-300"
+                className="flex items-center gap-3 actionBtn"
               >
                 <FaPhoneAlt className="h-6 w-6 text-blue-600" />
                 {phoneNumber}
@@ -150,7 +147,7 @@ const ContactInformation = () => {
               </h4>
               <a
                 href={`https://wa.me/${whatsappNumber}`}
-                className="flex items-center gap-3 text-blue-500 bg-blue-300/20 p-3 border rounded-lg hover:bg-blue-200 transition duration-300"
+                className="flex items-center gap-3 actionBtn"
               >
                 <FaWhatsapp className="h-6 w-6 text-blue-600" />
                 {whatsappNumber}

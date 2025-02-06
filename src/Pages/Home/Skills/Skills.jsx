@@ -118,70 +118,99 @@ const Skills = () => {
       <SectionHeader title={"Skills"}></SectionHeader>
 
       <Tabs className={"z-30"}>
-        <TabList className={"flex justify-center  my-5 "}>
-          <Tab className="md:mx-3 z-30 mx-1 cursor-pointer md:px-6 px-1 focus:outline-none">
+        {/* top bar  */}
+        <TabList
+          className={
+            "flex justify-center  my-5 border w-1/2 mx-auto p-2 rounded-full"
+          }
+        >
+          <Tab className="md:mx-3 z-30 mx-1 cursor-pointer md:px-6 px-2 focus:outline-none">
             Frontend
           </Tab>
-          <Tab className="md:mx-3 z-30 mx-1 cursor-pointer md:px-6 px-1 focus:outline-none">
+          <Tab className="md:mx-3 z-30 mx-1 cursor-pointer md:px-6 px-2 focus:outline-none">
             Backend
           </Tab>
-          <Tab className="md:mx-3 z-30 mx-1 cursor-pointer md:px-6 px-1 focus:outline-none">
+          <Tab className="md:mx-3 z-30 mx-1 cursor-pointer md:px-6 px-2 focus:outline-none">
             Tools
           </Tab>
         </TabList>
 
+        {/* frontend section */}
         <TabPanel>
-          <div className="grid grid-cols-4 md:grid-cols-10 gap-5 items-center justify-center">
-            {skills?.Frontend?.map((category, item) => (
-              <Tilt
-                key={item}
-                scale={1.3}
-                transitionSpeed={2500}
-                className="bg-white w-full  rounded-3xl hover:z-10 "
-              >
-                <div
-                  className={`w-full  rounded-3xl p-2 hover:z-10 ${category.bg} `}
-                >
-                  <img className="rounded-2xl" src={category.img} />
+          <div className="flex flex-col items-center justify-center h-full">
+            <div className="flex flex-wrap justify-center gap-5">
+              {skills?.Frontend?.map((category, item) => (
+                <div key={item} className="flex items-center justify-center">
+                  <Tilt
+                    scale={1.3}
+                    transitionSpeed={2500}
+                    className="bg-white rounded-3xl hover:z-10"
+                  >
+                    <div
+                      className={`rounded-3xl p-2 hover:z-10 ${category.bg}`}
+                    >
+                      <img
+                        className="rounded-2xl w-20 h-20 object-contain"
+                        src={category.img}
+                        alt={category.name || "Skill Image"}
+                      />
+                    </div>
+                  </Tilt>
                 </div>
-              </Tilt>
-            ))}
+              ))}
+            </div>
           </div>
         </TabPanel>
+        {/* backend section  */}
         <TabPanel>
-          <div className="grid grid-cols-4 md:grid-cols-10 gap-5 items-center">
-            {skills?.Backend?.map((category, item) => (
-              <Tilt
-                key={item}
-                scale={1.3}
-                transitionSpeed={2500}
-                className="bg-white w-full  rounded-3xl hover:z-10 "
-              >
-                <div
-                  className={`w-full  rounded-3xl p-2 hover:z-10 ${category.bg} `}
-                >
-                  <img className="rounded-2xl" src={category.img} />
+          <div className="flex flex-col items-center justify-center h-full">
+            <div className="flex flex-wrap justify-center gap-5">
+              {skills?.Backend?.map((category, item) => (
+                <div key={item} className="flex items-center justify-center">
+                  <Tilt
+                    scale={1.3}
+                    transitionSpeed={2500}
+                    className="bg-white rounded-3xl hover:z-10"
+                  >
+                    <div
+                      className={`rounded-3xl p-2 hover:z-10 ${category.bg}`}
+                    >
+                      <img
+                        className="rounded-2xl w-20 h-20 object-contain"
+                        src={category.img}
+                        alt={category.name || "Skill Image"}
+                      />
+                    </div>
+                  </Tilt>
                 </div>
-              </Tilt>
-            ))}
+              ))}
+            </div>
           </div>
         </TabPanel>
+        {/* tools section  */}
         <TabPanel>
-          <div className="grid grid-cols-4 md:grid-cols-10 gap-5 items-center">
-            {skills?.Tools?.map((category, item) => (
-              <Tilt
-                key={item}
-                scale={1.3}
-                transitionSpeed={2500}
-                className="bg-white w-full  rounded-3xl hover:z-10 "
-              >
-                <div
-                  className={`w-full  rounded-3xl p-2 hover:z-10 ${category.bg} `}
-                >
-                  <img className="rounded-2xl" src={category.img} />
+          <div className="flex flex-col items-center justify-center h-full">
+            <div className="flex flex-wrap justify-center gap-5">
+              {skills?.Tools?.map((category, item) => (
+                <div key={item} className="flex items-center justify-center">
+                  <Tilt
+                    scale={1.3}
+                    transitionSpeed={2500}
+                    className="bg-white rounded-3xl hover:z-10"
+                  >
+                    <div
+                      className={`rounded-3xl p-2 hover:z-10 ${category.bg}`}
+                    >
+                      <img
+                        className="rounded-2xl w-20 h-20 object-contain"
+                        src={category.img}
+                        alt={category.name || "Skill Image"}
+                      />
+                    </div>
+                  </Tilt>
                 </div>
-              </Tilt>
-            ))}
+              ))}
+            </div>
           </div>
         </TabPanel>
       </Tabs>
