@@ -25,7 +25,7 @@ const Projects = () => {
         {projects?.map((project, idx) => (
           <div
             key={idx}
-            className="group card dark:border-gray-600 shadow-lg dark:shadow-custom border dark:shadow-green-500/50 hover:shadow-custom flex  transition duration-300 overflow-hidden"
+            className="group card backdrop-blur-lg bg-gray-200/10 dark:bg-gray-500/20  shadow-lg dark:shadow-custom border dark:border-gray-400 dark:shadow-green-500/50 hover:shadow-custom flex  transition duration-300 overflow-hidden"
           >
             <figure className="  group-hover:scale-110 transform duration-300">
               <img
@@ -197,7 +197,6 @@ const Projects = () => {
             onClick={() => setLimit(true)}
             className="text-center md:w-1/4 w-1/2 px-5 py-2 hover:text-[#60f318] hover:border-[#60f318] transform duration-300 border rounded-full md:mt-10 mt-5"
           >
-            {" "}
             Show Less
           </a>
         </div>

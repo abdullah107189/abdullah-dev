@@ -117,20 +117,20 @@ const Skills = () => {
     <div>
       <SectionHeader title={"Skills"}></SectionHeader>
 
-      <Tabs className={"z-30"}>
+      <Tabs className="z-10 relative">
         {/* top bar  */}
         <TabList
           className={
-            "flex justify-center  my-5 border w-1/2 mx-auto p-2 rounded-full"
+            "flex   justify-center my-5 border dark:border-gray-400 z-10 md:w-1/2 mx-auto p-2 rounded-full"
           }
         >
-          <Tab className="md:mx-3 z-30 mx-1 cursor-pointer md:px-6 px-2 focus:outline-none">
+          <Tab className="md:mx-3 border dark:border-gray-400  rounded-full z-30 mx-1 cursor-pointer md:px-6 px-2 focus:outline-none">
             Frontend
           </Tab>
-          <Tab className="md:mx-3 z-30 mx-1 cursor-pointer md:px-6 px-2 focus:outline-none">
+          <Tab className="md:mx-3 border dark:border-gray-400  rounded-full z-30 mx-1 cursor-pointer md:px-6 px-2 focus:outline-none">
             Backend
           </Tab>
-          <Tab className="md:mx-3 z-30 mx-1 cursor-pointer md:px-6 px-2 focus:outline-none">
+          <Tab className="md:mx-3 border dark:border-gray-400  rounded-full z-30 mx-1 cursor-pointer md:px-6 px-2 focus:outline-none">
             Tools
           </Tab>
         </TabList>
@@ -144,7 +144,7 @@ const Skills = () => {
                   <Tilt
                     scale={1.3}
                     transitionSpeed={2500}
-                    className="bg-white rounded-3xl hover:z-10"
+                    className="bg-white rounded-3xl hover:z-10 z-10"
                   >
                     <div
                       className={`rounded-3xl p-2 hover:z-10 ${category.bg}`}

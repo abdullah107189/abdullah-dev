@@ -27,18 +27,19 @@ const Home = () => {
         <title>Home - Abdullah | Dev</title>
       </Helmet>
       <Banner></Banner>
+
       {/* About Me Section */}
       <section id="about" className="md:py-10 py-5 bgWhite black">
         <div className="mx-auto">
           <About></About>
-        </div>
+      </div>
       </section>
 
       <section id="skills" className="md:py-10 py-5 bgWhite black">
         <Skills></Skills>
       </section>
 
-      <section id="skills" className="md:py-10 my-10 py-5 bgWhite black">
+      <section id="education" className="md:py-10 my-10 py-5 bgWhite black">
         <EducationalQualifications></EducationalQualifications>
       </section>
 

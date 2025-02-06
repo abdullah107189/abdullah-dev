@@ -64,11 +64,13 @@ const ContactInformation = () => {
   const location = "Rajshahi, Dhaka";
 
   return (
-    <div className="">
-      <SectionHeader title={"Contact"}></SectionHeader>
-      <div className="grid dark:text-white grid-cols-1 md:grid-cols-2 gap-6 md:p-6 p-3 rounded-2xl border dark:border-gray-700 shadow mb-5">
+    <div className="z-10 relative">
+      <div className="md:my-10 my-5 z-10 relative">
+        <SectionHeader title={"Contact"}></SectionHeader>
+      </div>
+      <div className="grid dark:text-white grid-cols-1 md:grid-cols-2 bg-gray-200/10 dark:bg-gray-500/20 gap-6 md:p-6 p-3 rounded-2xl border dark:border-gray-400 shadow mb-5 backdrop-blur-xl">
         {/* Left Column: Email Form */}
-        <div className="bg-gray-100 dark:bg-gray-800 p-6 border dark:border-gray-700 rounded-2xl shadow-lg">
+        <div className="dark:bg-white/10 bg-white/20 backdrop-blur-lg p-6 border dark:border-gray-400 rounded-2xl shadow-lg">
           <h3 className="text-2xl font-semibold mb-4">Send Me an Email</h3>
           <form onSubmit={handleEmailSubmit}>
             <div className="mb-4">
@@ -81,7 +83,8 @@ const ContactInformation = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="mt-1 block w-full p-2 rounded-lg focus:outline-none"
+                placeholder=""
+                className="mt-1 block w-full p-2 rounded-lg dark:bg-white/20 focus:outline-none"
               />
             </div>
             <div className="mb-4">
@@ -94,7 +97,7 @@ const ContactInformation = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="mt-1 block w-full p-2 rounded-lg focus:outline-none"
+                className="mt-1 block w-full p-2 rounded-lg dark:bg-white/20 focus:outline-none"
               />
             </div>
             <div className="mb-4">
@@ -107,7 +110,7 @@ const ContactInformation = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 required
                 rows="4"
-                className="mt-1 block w-full p-2 focus:outline-none rounded-lg"
+                className="mt-1 block w-full p-2 dark:bg-white/20 focus:outline-none rounded-lg"
               />
             </div>
             <button type="submit" className="actionBtn">
@@ -125,7 +128,7 @@ const ContactInformation = () => {
 
         {/* Right Column: Contact Details */}
 
-        <div className="bg-gray-100 dark:bg-gray-800 border dark:border-gray-700 md:p-6 p-4 rounded-lg shadow-lg ">
+        <div className="dark:bg-white/10 bg-white/20 backdrop-blur-lg border dark:border-gray-400 md:p-6 p-4 rounded-2xl shadow-lg ">
           <h3 className="text-3xl font-semibold dark:text-gray-200 text-gray-800 mb-6 text-center">
             Contact Details
           </h3>
