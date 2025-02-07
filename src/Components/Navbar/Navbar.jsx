@@ -160,19 +160,19 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
+            to={"/#education"}
+            duration={500}
+            className="relative px-2 transition duration-200 hover:text-[#60f318]"
+          >
+            Education
+          </NavLink>
+
+          <NavLink
             duration={500}
             to={"/#projects"}
             className="relative  px-2 transition duration-200 hover:text-[#60f318]"
           >
             Projects
-          </NavLink>
-
-          <NavLink
-            to={"/#services"}
-            duration={500}
-            className="relative px-2 transition duration-200 hover:text-[#60f318]"
-          >
-            Services
           </NavLink>
 
           <NavLink

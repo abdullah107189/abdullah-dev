@@ -12,7 +12,8 @@ const Projects = () => {
     queryKey: ["projects", limit],
     queryFn: async () => {
       const { data } = await axios.get(
-        `https://abdullah-dev-server-side.vercel.app/projects?limit=${limit}`
+        // `https://abdullah-dev-server-side.vercel.app/projects?limit=${limit}`
+        `http://localhost:4545/projects?limit=${limit}`
       );
       return data;
     },
