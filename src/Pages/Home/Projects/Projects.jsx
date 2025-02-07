@@ -6,14 +6,12 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import SectionHeader from "../../../Components/SectionHeader";
 const Projects = () => {
-  // const [projects, setProjects] = useState([]);
   const [limit, setLimit] = useState(true);
   const { data: projects = [] } = useQuery({
     queryKey: ["projects", limit],
     queryFn: async () => {
       const { data } = await axios.get(
-        // `https://abdullah-dev-server-side.vercel.app/projects?limit=${limit}`
-        `http://localhost:4545/projects?limit=${limit}`
+        `https://abdullah-dev-server-side.vercel.app/projects?limit=${limit}`
       );
       return data;
     },

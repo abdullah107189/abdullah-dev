@@ -11,9 +11,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 md:gap-5 gap-2">
             {/* About Me Section */}
             <div className="dark:bg-white/10 bg-white/50 p-6 rounded-xl shadow-lg border dark:border-gray-400 text-left md:col-span-12 lg:col-span-9">
-              <h3 className="text-xl font-bold text-blue-400 mb-2">
-                About Me
-              </h3>
+              <h3 className="text-xl font-bold text-blue-400 mb-2">About Me</h3>
               <p className="dark:text-gray-200">
                 I’m Abdullah, a passionate
                 <span className="text-blue-400 font-semibold mx-1">
@@ -69,7 +67,7 @@ const About = () => {
               <p className="dark:text-gray-200">
                 I love to travel, paint, and stay active through sports. I
                 especially like playing online games like Free Fire, but since I
-                started web development, it's not a good game anymore..
+                started web development, it&apos;s not a good game anymore..
               </p>
             </div>
 

@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { MdOutlineEmail } from "react-icons/md";
 
 const ContactInformation = () => {
   const [name, setName] = useState("");
@@ -61,7 +62,7 @@ const ContactInformation = () => {
   // right side
   const phoneNumber = "+8801771542594";
   const whatsappNumber = "+8801771542594";
-  const location = "Rajshahi, Dhaka";
+  const location = "Rajshahi, Bangladesh";
 
   return (
     <div className="z-10 relative">
@@ -133,9 +134,8 @@ const ContactInformation = () => {
             Contact Details
           </h3>
 
-          <div className="flex items-center flex-col justify-center">
-            <div className="mb-6">
-              <h4 className="text-lg mb-3 font-semibold text-center">Phone</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center justify-center ">
+            <div className="mb-6 bg-gray-50/30 rounded-full">
               <a
                 href={`tel:${phoneNumber}`}
                 className="flex items-center gap-3 actionBtn"
@@ -144,10 +144,7 @@ const ContactInformation = () => {
                 {phoneNumber}
               </a>
             </div>
-            <div className="mb-6">
-              <h4 className="text-lg mb-3 font-semibold text-center">
-                WhatsUp
-              </h4>
+            <div className="mb-6 bg-gray-50/30 rounded-full">
               <a
                 href={`https://wa.me/${whatsappNumber}`}
                 className="flex items-center gap-3 actionBtn"
@@ -157,12 +154,16 @@ const ContactInformation = () => {
               </a>
             </div>
 
-            <div className="mb-6">
-              <h4 className="text-lg mb-3 font-semibold text-center">
-                Location
-              </h4>
-              <div className="flex items-center gap-3 text-blue-500 p-3 rounded-lg transition duration-300">
+            <div className="mb-6 bg-gray-50/30 rounded-full">
+              <div className="flex items-center gap-3 text-blue-500 p-3 transition duration-300 border rounded-full">
                 <FaMapMarkerAlt className="h-6 w-6 " />
+                <p className="dark:text-gray-200 text-gray-700">{location}</p>
+              </div>
+            </div>
+
+            <div className="mb-6 bg-gray-50/30 rounded-full">
+              <div className="flex items-center gap-3 text-blue-500 p-3 transition duration-300 border rounded-full">
+                <MdOutlineEmail className="h-6 w-6 " />
                 <p className="dark:text-gray-200 text-gray-700">{location}</p>
               </div>
             </div>
