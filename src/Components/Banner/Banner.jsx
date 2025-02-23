@@ -22,8 +22,8 @@ const Banner = () => {
       className="relative flex items-center"
     >
       {/* Decorative Shapes */}
-      <div className="fixed bgBlueTransform bg-[#60f318] rounded-full w-[600px] h-[600px] blur-[150px] left-0 opacity-20"></div>
-      <div className="fixed bgGreenTransform right-10 top-30 bg-[#4bb8f2] w-[600px] blur-[150px] h-[600px] opacity-20 "></div>
+      <div className="fixed bgBlueTransform bg-[#60f318] rounded-full w-1/2 md:h-2/3 h-screen blur-[150px] md:left-0 top-0 opacity-20"></div>
+      <div className="fixed bgGreenTransform md:right-10 md:top-30 bg-[#4bb8f2] w-1/2 md:h-2/3 h-screen blur-[150px] bottom-0  opacity-20"></div>
 
       <div
         data-aos="fade-up"

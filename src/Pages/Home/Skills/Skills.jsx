@@ -140,7 +140,12 @@ const Skills = () => {
           <div className="flex flex-col items-center justify-center h-full">
             <div className="flex flex-wrap justify-center gap-5">
               {skills?.Frontend?.map((category, item) => (
-                <div key={item} className="flex items-center justify-center">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay={item * 100}
+                  key={item}
+                  className="flex items-center justify-center"
+                >
                   <Tilt
                     scale={1.3}
                     transitionSpeed={2500}
@@ -166,7 +171,12 @@ const Skills = () => {
           <div className="flex flex-col items-center justify-center h-full">
             <div className="flex flex-wrap justify-center gap-5">
               {skills?.Backend?.map((category, item) => (
-                <div key={item} className="flex items-center justify-center">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay={item * 100}
+                  key={item}
+                  className="flex items-center justify-center"
+                >
                   <Tilt
                     scale={1.3}
                     transitionSpeed={2500}
@@ -192,7 +202,12 @@ const Skills = () => {
           <div className="flex flex-col items-center justify-center h-full">
             <div className="flex flex-wrap justify-center gap-5">
               {skills?.Tools?.map((category, item) => (
-                <div key={item} className="flex items-center justify-center">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay={item * 100}
+                  key={item}
+                  className="flex items-center justify-center"
+                >
                   <Tilt
                     scale={1.3}
                     transitionSpeed={2500}
